@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Lorenzo Lazzarino - Homepage</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap">
+    <link rel="shortcut icon" href="images/user-3.ico" type="image/x-icon"/>
+    
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+    <div id="header"></div>
+
+    <script>
+        fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        })
+        .catch(error => {
+            document.getElementById('header').innerHTML = "<p>Failed to load header</p>";
+            console.error("Error loading header:", error);
+        });
+
+    </script>
+
+
+
+    <main>
+
+        <div class="megacontainer">
+            
+                <div class="about-me">
+                    <div>
+                        <h2><span class="underline drop-cap">Hi!</span></h2>
+                        <p> I am a 2nd year PhD student in Numerical Mathematics advised by <a href="https://people.maths.ox.ac.uk/nakatsukasa/" target="_blank">Yuji Nakatsukasa</a> and 
+                            <a href="https://www.numerical.rl.ac.uk/people/h_aldaas/" target="_blank">Hussam Al Daas</a>.</p><br>
+                        
+                            <p>
+                            I like to think about (Randomized) Numerical (Multi)Linear Algebra, especially:
+                            <ul>
+                                <li> Randomized low-rank approximations</li>
+                                <li> Tensor-Train format</li>
+                                <li> Krylov subspace methods</li>
+                            </ul>
+                        </p> 
+                            <br>
+                        <div class="icon-container">
+                            <a href="https://scholar.google.com/citations?user=gPxBjy8AAAAJ&hl=fr&oi=ao"   target="_blank">
+                                <img src="images/icons8-google-scholar-96.png" alt="GoogleScholar">
+                            </a>
+                            <a class="icon-arxiv" href="https://arxiv.org/search/math?searchtype=author&query=Lazzarino,+L"   target="_blank">
+                                <img src="images/arxiv-base2.png" alt="Arxiv">       
+                            </a>
+                                <a href="https://github.com/lorenzolazzarino"   target="_blank">
+                                <img src="images/icons8-github-96.png" alt="GitHub">
+                            </a>
+                            <a href="https://www.linkedin.com/in/lorenzolazzarino/"   target="_blank">
+                                <img src="images/icons8-linkedin-96.png" alt="Linkedin">
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="publications">
+                    <h3>Publications</h3>
+                        <p class="bib-entry">[1] <a href="https://arxiv.org/pdf/2409.09187"  target="_blank"><em>Matrix perturbation analysis of methods for extracting singular values from approximate singular subspaces</em></a>,
+                        L.L., H. Al Daas, Y. Nakatsukasa, 2024, <a href="https://arxiv.org/abs/2409.09187"  target="_blank">Arxiv</a>  </p>
+                </div>
+                
+                <div class="talks">
+                    <h3><a href="talks.html">Talks</a></h3>
+                    
+                        <div class="talk-entry">
+                            <span class="talk-title"><a href="http://pysanum.dm.unipi.it/seminari-passati/"  target="_blank">Extracting accurate singular values from approximate subspaces</a></span><br>
+                            <span class="talk-event">PYSANUM</span><br>
+                            <span class="talk-details">10 October 2024, Università di Pisa e Scuola Normale Superiore</span>
+                        </div>
+
+                        <div class="talk-entry">
+                            <span class="talk-title"><a href="https://www.maths.ox.ac.uk/node/66666"  target="_blank">Error bound on singular values approximations by generalized Nyström</a></span><br>
+                            <span class="talk-event">Numerical Analysis Group Internal Seminar</span><br>
+                            <span class="talk-details">05 March 2024, University of Oxford</span> 
+                        </div>
+
+                    
+                </div>
+
+                <div class="teaching">
+                    <h3>Teaching</h3>
+                    <div class="teaching-entry">
+                        <span class="teaching-role">Tutor -</span>
+                        <span class="teaching-class"><a href="https://courses.maths.ox.ac.uk/course/view.php?id=5024" target="_blank">Numerical Linear Algebra</a></span>
+                        <span class="teaching-lecturer">Lecturer: Y.Nakatsukasa</span><br><br>
+
+                        <span class="teaching-role">Tutor -</span>
+                        <span class="teaching-class"><a href="https://courses.maths.ox.ac.uk/course/view.php?id=5058" target="_blank">Continuous Optimization</a></span>
+                        <span class="teaching-lecturer">Lecturer: C.Cartis</span>
+                    </div>
+                    </div>
+
+                <div class="horizontal-line"></div>
+            
+                <div class="background">
+                    <h3><a href="background.html">Education </a></h3>
+                    <div class="education-entry">
+                            <span class="education-institution">University of Oxford,</span>
+                            <span class="education-city">Oxford, UK,</span>
+                            <span class="education-degree">Dphil in Mathematics</span>
+                            <span class="education-years">2023 - 2027</span>
+                        
+                    </div>
+                    
+                    <div class="education-entry">
+                        
+                            <span class="education-institution">Charles University,</span>
+                            <span class="education-city">Prague, Czechia,</span>
+                            <span class="education-degree">MSc in Computational Mathematics</span>
+                            <span class="education-years">2021 - 2023</span>
+                    
+                    </div>
+                    <!-- A sub-item (indented) -->
+                    <div class="education-entry sub-item">
+                            <span class="education-institution">Sorbonne University,</span>
+                            <span class="education-city">Paris, France,</span>
+                            <span class="education-degree">4EU+ Program</span> <!-- Empty for no extra info -->
+                            <span class="education-years"></span>
+                    
+                    </div>
+                    
+                    <div class="education-entry">
+                        
+                            <span class="education-institution">Università Milano-Bicocca,</span>
+                            <span class="education-city">Milan, Italy,</span>
+                            <span class="education-degree">BSc in Mathematics</span>
+                            <span class="education-years">2017 - 2021</span>
+                        
+                    </div>
+                    <!-- A sub-item (indented) -->
+                    <div class="education-entry sub-item">
+                        
+                            <span class="education-institution">TU Kaiserslautern,</span>
+                            <span class="education-city">Kaiserslautern, Germany,</span>
+                            <span class="education-degree">Erasmus+</span> <!-- Empty for no extra info -->
+                            <span class="education-years"></span>
+                        
+                    </div>
+                </div>
+
+                <div class="upcoming">
+                    <h3 class="upcoming-title">Upcoming</h3>
+                    <p> <img src="images/icons8-canopy-96.png" class="smiley"></p>
+                    <span> You'll find me in Oxford for a little bit!</span>
+                        <!--   
+                            <p><em>10 Oct. 2024</em><br></p> 
+                            <span>I'll be in Pisa at the <a href=" https://pysanum.dm.unipi.it/" target="_blank">Pysanum,</a> probably talking about low-rank approximations and TT-rounding!</span> 
+                        --> 
+                </div>
+
+                <div class="extra">
+                    <h3>Plus,</h3>
+                    <ul class="extra-list">
+                        <li>I love traveling</li>
+                        <li>I take Table Football way too seriously</li>
+                        <li>I enjoy <a href="https://www.chess.com/member/l-lorenzo" target="_blank">chess</a> and painting, even if I am really bad!</li>
+                    </ul>
+                </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

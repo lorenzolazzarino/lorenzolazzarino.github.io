@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Lorenzo Lazzarino - Homepage</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap">
+    <link rel="shortcut icon" href="images/user-3.ico" type="image/x-icon"/>
+    
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div id="header"></div>
+    <script>
+        fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        })
+        .catch(error => {
+            document.getElementById('header').innerHTML = "<p>Failed to load header</p>";
+            console.error("Error loading header:", error);
+        });
+
+    </script>
+    
+
+    <main>
+        <div class="megacontainer talks-megacontainer">
+            <div class="directory-indicator">
+                > <a href="index.html">Home</a> / <a href="background.html">Talks</a>
+            </div>
+            
+            <!-- Title, event, and details -->
+            <div class="title-page">
+                <h1>Talks</h1>
+            </div>
+
+            <div class="talk-entry">
+                <div class="presentation-container">
+                    <!-- Centered Title, Event, and Details -->
+                   
+                        <span class="talk-title">
+                            <a href="http://pysanum.dm.unipi.it/seminari-passati/" target="_blank">Extracting accurate singular values from approximate subspaces</a>
+                        </span><br>
+                        <span class="talk-event">PYSANUM</span><br>
+                        <span class="talk-details">10 October 2024, Università di Pisa e Scuola Normale Superiore</span>
+                   
+
+                    <!-- Flexbox container for image and PDF next to each other -->
+                    <div class="media-container">
+                        <img src="talks/2024/PYSANUM2024.jpg" alt="Talk 1 Image">
+                        <object class="pdf-viewer" data="talks/2024/PYSANUM2024.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" type="application/pdf">
+                            <p><a href="talks/2024/PYSANUM2024.pdf">Slides</a></p>
+                        </object>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More entries if needed -->
+            <div class="talk-entry">
+                <div class="presentation-container">
+                        <span class="talk-title"><a href="https://www.maths.ox.ac.uk/node/66666" target="_blank">Matrix perturbation analysis of methods for extracting singular values</a></span><br>
+                        <span class="talk-event">Gene Golub SIAM Summer School, 3 minutes presentations</span><br>
+                        <span class="talk-details">29 July 2024, Quito</span>
+                    
+
+                    <div class="media-container">
+                        <img src="talks/2024/G2S3-2024.jpg" alt="Talk 2 Image">
+                        <object class="pdf-viewer" data="talks/2024/G2S3-2024.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf">
+                            <p><a href="talks/2024/G2S3-2024.pdf">Slides</a></p>
+                        </object>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More entries if needed -->
+            <div class="talk-entry">
+                <div class="presentation-container">
+                        <span class="talk-title"><a href="https://www.maths.ox.ac.uk/node/66666" target="_blank">Error bound on singular values approximations by generalized Nyström</a></span><br>
+                        <span class="talk-event">Numerical Analysis Group Internal Seminar</span><br>
+                        <span class="talk-details">05 March 2024, University of Oxford</span>
+                    
+
+                    <div class="media-container">
+                        <img src="talks/2024/Internal Seminar2024.jpg" alt="Talk 2 Image">
+                        <object class="pdf-viewer" data="talks/2024/Internal Seminar2024.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf">
+                            <p><a href="talks/2024/Internal Seminar2024.pdf">Slides</a></p>
+                        </object>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More entries if needed -->
+            <div class="talk-entry">
+                <div class="presentation-container">
+                    <span class="talk-title"><a href="https://www.starlanczos.cz/workshop-2023"  target="_blank">Numerical approximation of the time-ordered exponential for spin dynamic simulation</a></span><br>
+                    <span class="talk-event">Workshop on Numerical Mathematics</span><br>
+                    <span class="talk-details">20/21 July 2023, Charles University, Prague</span>
+                    
+
+                    <div class="media-container">
+                        <object class="pdf-viewer" data="talks/2023/Ws_Star23.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf">
+                            <p><a href="talks/2023/Ws_Star23.pdf">Slides</a></p>
+                        </object>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
