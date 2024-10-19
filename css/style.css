@@ -333,7 +333,7 @@
     justify-self: start; /* Aligns to the left */
     font-size: 0.9rem;
     border-bottom: 0.1rem solid var(--red);
-    padding-bottom: 0.5%; /* Removes any padding under the text */
+    padding-bottom: 0.1%; /* Removes any padding under the text */
     margin-bottom: 0; /* Adjust the margin to bring the border closer to the text */
     display: inline-block; /* Ensure the width of the element matches the text */
 }
@@ -415,7 +415,6 @@
 /* TALK PAGE STYLE */   
 .talks-megacontainer {
     grid-template-columns: auto;
-    grid-template-rows: auto auto auto;
     font-size: 1.2rem;
 }
 
@@ -432,9 +431,13 @@ embed:focus {
     outline: none;
 }
 
-
-
-
+h3 a::after {
+    content: " \2022 \2022 \2022"; /* Unicode for bullet points */
+    color: var(--red); /* Color of the dots */
+    font-size: 0.9rem; /* Adjust the size as needed */
+    vertical-align: -0.2rem;
+    margin-left: -0.4rem;
+}
 
 
 /* Ensure the media container doesn't overflow */
@@ -671,18 +674,55 @@ embed:focus {
 
     
 
-        .talks-megacontainer {
+        .talks-megacontainer, .background-megacontainer {
             font-size: 0.8rem;
         }
 
         .pdf-viewer {
-            width: 8rem;
-            height: 6rem; /* Set to desired height */
+            width: 14rem;
+            height: auto; /* Set to desired height */
             border: none;
         }
 
         .media-container img {
-            max-width: 6rem;
+            max-width: 10rem;
             height: auto;
         }
+
+        .talks-megacontainer, .background-megacontainer {
+            display: flex;
+            flex-direction: column;
+            gap: 5%;  /* Space between each talk */
+            padding: 5%;  /* Adjust padding */
+            margin-bottom: 5%;
+        }
+    
+        /* Ensure each talk-entry takes up full width and is stacked */
+        .talks-page .talk-entry {
+            width: 100%;
+            margin-bottom: 20px;  /* Space between each entry */
+        }
+         /* Center all text and ensure each entry is stacked */
+    .talk-entry {
+        text-align: center;
+        margin-bottom: 20px;  /* Add space between each talk entry */
+    }
+
+    /* Stack title, event, and details vertically */
+    .presentation-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Ensure everything is centered */
+        margin-bottom: 20px;
+    }
+
+    /* PDF and Image should be stacked vertically, not side by side */
+    .media-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
     }
