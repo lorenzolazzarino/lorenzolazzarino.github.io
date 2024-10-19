@@ -660,7 +660,7 @@ embed:focus {
 /* Flexbox container for image and PDF side by side */
 .media-container {
     display: flex;
-    border: 0.1rem solid var(--base0);    justify-content: center; /* Adds space between the two items */
+    justify-content: center; /* Adds space between the two items */
     align-items: center; /* Vertically centers the image and PDF */
     gap: 1rem; /* Adds some space between the image and PDF */
     max-width: 100%;  /* Prevents overflow from the parent container */
