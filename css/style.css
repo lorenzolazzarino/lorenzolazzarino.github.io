@@ -321,6 +321,157 @@
         color: var(--red);
     }
 
+          
+
+    /* SUB PAGES STYLE */
+
+  /* Ensure the directory indicator is on the top left */
+  .directory-indicator {
+    grid-column: 1 / 2; /* Placing it in the first column */
+    grid-row: 1;
+    align-self: self-start;
+    justify-self: start; /* Aligns to the left */
+    font-size: 0.9rem;
+    border-bottom: 0.1rem solid var(--red);
+    padding-bottom: 0.5%; /* Removes any padding under the text */
+    margin-bottom: 0; /* Adjust the margin to bring the border closer to the text */
+    display: inline-block; /* Ensure the width of the element matches the text */
+}
+
+/* Ensure the title is centered at the top */
+.title-page {
+    grid-column: 1 / -1; /* Spans across all columns */
+    grid-row: 1; /* Also in the first row */
+    justify-self: center; /* Centering the title horizontally */
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.title-page h1 {
+    font-size: 2rem;
+    color: var(--base03);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+.central-line {
+    width: 70%; /* Adjust width as needed */
+    height: 0.01rem; /* Adjust thickness */
+    background-color: var(--base0); /* Adjust color */
+    margin: 0 auto; /* Center the line */
+    margin-top: 1rem;
+    border-color: var(--base0);
+  }
+
+/* BACKGROUND PAGE STYLE */ 
+
+
+
+.background-megacontainer{
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+
+}
+
+.uni {
+    display: block;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+.education-description {
+    display: block; /* Ensures it takes up the full width and goes to the next line */
+    margin-top: 0.3rem; /* Adds space between the main content and the description */
+    width: 100%; /* Ensure it takes up the full width */
+    padding-left: 1.8%; /* Align with the education-entry content */
+    border-left: 0.1rem solid var(--base0);
+    margin-left: 5%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+
+
+.background-education-entry {
+    margin-bottom: 1%;
+    font-size: 1rem; /* Slightly smaller font for a compact look */
+    width: 90%;
+    margin-left: 1.8%;
+}
+
+.sfg-description {
+    margin-top: -0.8rem; /* Reduce the space above the description */
+    padding-left: 1.8%; /* Ensure consistency with other entries */
+}
+
+
+.uni, .grants {
+    display: flex;
+    flex-direction: column;
+}
+
+/* TALK PAGE STYLE */   
+.talks-megacontainer {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    font-size: 1.2rem;
+}
+
+.pdf-viewer {
+    border: none;
+    margin: 10px 0;
+    width: 21rem;
+    height: 13rem; /* Set to desired height */
+    border: none;
+    overflow: hidden;  /* Prevents scrollbars inside PDF viewer */
+}
+ 
+embed:focus {
+    outline: none;
+}
+
+
+
+
+
+
+/* Ensure the media container doesn't overflow */
+.talk-entry {
+    overflow-x: hidden;
+}
+/* Container that holds the title, event, and details */
+.presentation-container {
+    text-align: center;  /* Centers the title, event, and details */
+
+    overflow: hidden;  /* Prevents scrollbars */
+}
+
+/* Flexbox container for image and PDF side by side */
+.media-container {
+    display: flex;
+    justify-content: center; /* Adds space between the two items */
+    align-items: center; /* Vertically centers the image and PDF */
+    gap: 1rem; /* Adds some space between the image and PDF */
+    max-width: 100%;  /* Prevents overflow from the parent container */
+    overflow: hidden; /* Prevents scrollbars */
+    margin-bottom: 1rem;
+}
+
+/* Image styling */
+.media-container img {
+    max-width: 13rem;
+    height: auto;  /* Maintains aspect ratio */
+}
+
+/* Ensure the media container doesn't overflow */
+.talk-entry {
+    overflow-x: hidden; /* Prevents horizontal scrollbars */
+    overflow-y: hidden; /* Prevents vertical scrollbars */
+}
+
+
     
     @media (max-width: 768px) {
         body {
@@ -518,175 +669,20 @@
         }
         
 
+    
+
+        .talks-megacontainer {
+            font-size: 0.8rem;
+        }
+
+        .pdf-viewer {
+            width: 8rem;
+            height: 6rem; /* Set to desired height */
+            border: none;
+        }
+
+        .media-container img {
+            max-width: 6rem;
+            height: auto;
+        }
     }
-
-
-
-
-        
-
-    /* SUB PAGES STYLE */
-
-  /* Ensure the directory indicator is on the top left */
-  .directory-indicator {
-    grid-column: 1 / 2; /* Placing it in the first column */
-    grid-row: 1;
-    align-self: self-start;
-    justify-self: start; /* Aligns to the left */
-    font-size: 0.9rem;
-    border-bottom: 0.1rem solid var(--red);
-    padding-bottom: 0.5%; /* Removes any padding under the text */
-    margin-bottom: 0; /* Adjust the margin to bring the border closer to the text */
-    display: inline-block; /* Ensure the width of the element matches the text */
-}
-
-/* Ensure the title is centered at the top */
-.title-page {
-    grid-column: 1 / -1; /* Spans across all columns */
-    grid-row: 1; /* Also in the first row */
-    justify-self: center; /* Centering the title horizontally */
-    text-align: center;
-    margin-top: 1rem;
-}
-
-.title-page h1 {
-    font-size: 2rem;
-    color: var(--base03);
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-
-.central-line {
-    width: 70%; /* Adjust width as needed */
-    height: 0.01rem; /* Adjust thickness */
-    background-color: var(--base0); /* Adjust color */
-    margin: 0 auto; /* Center the line */
-    margin-top: 1rem;
-    border-color: var(--base0);
-  }
-
-/* BACKGROUND PAGE STYLE */ 
-
-
-
-.background-megacontainer{
-    grid-template-columns: auto;
-    grid-template-rows: auto auto auto;
-
-}
-
-.uni {
-    display: block;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    width: 100%;
-}
-
-.education-description {
-    display: block; /* Ensures it takes up the full width and goes to the next line */
-    margin-top: 0.3rem; /* Adds space between the main content and the description */
-    width: 100%; /* Ensure it takes up the full width */
-    padding-left: 1.8%; /* Align with the education-entry content */
-    border-left: 0.1rem solid var(--base0);
-    margin-left: 5%;
-    padding-bottom: 1%;
-    padding-top: 1%;
-}
-
-
-.background-education-entry {
-    margin-bottom: 1%;
-    font-size: 1rem; /* Slightly smaller font for a compact look */
-    width: 90%;
-    margin-left: 1.8%;
-}
-
-.sfg-description {
-    margin-top: -0.8rem; /* Reduce the space above the description */
-    padding-left: 1.8%; /* Ensure consistency with other entries */
-}
-
-
-.uni, .grants {
-    display: flex;
-    flex-direction: column;
-}
-
-/* TALK PAGE STYLE */   
-.talks-megacontainer {
-    grid-template-columns: auto;
-    grid-template-rows: auto auto auto;
-    font-size: 1.2rem;
-}
-
-.pdf-viewer {
-    border: none;
-    margin: 10px 0;
-    width: 21rem;
-    height: 13rem; /* Set to desired height */
-    border: none;
-    overflow: hidden;  /* Prevents scrollbars inside PDF viewer */
-}
- 
-embed:focus {
-    outline: none;
-}
-
-
-
-
-
-
-/* Ensure the media container doesn't overflow */
-.talk-entry {
-    overflow-x: hidden;
-}
-/* Container that holds the title, event, and details */
-.presentation-container {
-    text-align: center;  /* Centers the title, event, and details */
-
-    overflow: hidden;  /* Prevents scrollbars */
-}
-
-/* Flexbox container for image and PDF side by side */
-.media-container {
-    display: flex;
-    justify-content: center; /* Adds space between the two items */
-    align-items: center; /* Vertically centers the image and PDF */
-    gap: 1rem; /* Adds some space between the image and PDF */
-    max-width: 100%;  /* Prevents overflow from the parent container */
-    overflow: hidden; /* Prevents scrollbars */
-    margin-bottom: 1rem;
-}
-
-/* Image styling */
-.media-container img {
-    max-width: 13rem;
-    height: auto;  /* Maintains aspect ratio */
-}
-
-/* Ensure the media container doesn't overflow */
-.talk-entry {
-    overflow-x: hidden; /* Prevents horizontal scrollbars */
-    overflow-y: hidden; /* Prevents vertical scrollbars */
-}
-
-@media (max-width: 768px) {
-
-    .talks-megacontainer {
-        font-size: 0.8rem;
-    }
-
-    .pdf-viewer {
-        width: 8rem;
-        height: 6rem; /* Set to desired height */
-        border: none;
-    }
-
-    .media-container img {
-        max-width: 6rem;
-        height: auto;
-    }
-}
