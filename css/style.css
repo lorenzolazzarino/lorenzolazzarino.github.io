@@ -1,0 +1,699 @@
+:root {
+
+    --base03:    #002b36;
+    --base02:    #073642;
+    --base01:    #586e75;
+    --base00:    #657b83;
+    --base0:     #839496;
+    --base1:     #93a1a1;
+    --base2:     #eee8d5;
+    --base3:     #fdf6e3;
+    --yellow:    #b58900;
+    --orange:    #cb4b16;
+    --red:       #dc322f;
+    --magenta:   #d33682;
+    --violet:    #6c71c4;
+    --blue:      #268bd2;
+    --cyan:      #2aa198;
+    --green:     #859900;
+    }
+
+    body {
+        font-family: 'Inconsolata', monospace;
+        font-size: 1rem; 
+        color: var(--base01);
+        margin: 0;
+        padding: 0;
+        display: block;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
+        background-color: var(--base3);
+    }
+
+    .megacontainer {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 3%;
+        display: grid;
+        gap: 2%;
+        border: 0.1rem solid var(--base0);
+        border-radius: 0px;
+        padding: 3%;
+        padding-bottom: 5%;
+        grid-template-columns: 4fr 3fr 3fr 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
+
+    .container-header {
+        width: 70%;
+        margin: 1% auto;
+        display: grid;
+        grid-template-columns: 1fr 5fr 2fr;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header {
+        margin-left: -5.5%;
+        grid-column: 2;
+        text-align: center;
+        width: 100%;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    .header h1 {
+        font-size: 2.5rem;
+        color: var(--base03);
+        margin-bottom: 0;
+    }
+
+    .profile-pic {
+        margin-left: -6%;
+        grid-column: 1;
+        border-radius: 10%;
+        width: 80%;
+        height: 80%;
+        background-image: url('../images/user-3.jpg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .contact {
+        grid-column: 3;
+        grid-row: 1;
+        padding: 8%;
+        border: 0.1rem solid var(--base0);
+        border-radius: 0%;
+        font-size: 0.7rem;
+        width: 100%;
+        margin-left: 5%;
+        padding-right: 25%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .icon-vertical {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .icon-vertical a:hover{
+        text-decoration: none;
+        border-bottom: 0.1rem solid var(--red);
+    }
+
+    .icon-vertical img {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-bottom: 1%;
+    }
+
+    .about-me {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        text-align: justify;
+        border-right: 0.1rem solid var(--base0);
+        padding-right: 5%;
+    }
+
+    .drop-cap {
+        float: left;
+        font-size: 2rem;
+        margin-right: 4%;
+        color: var(--base02);
+    }
+    .underline 
+    {
+        border-bottom: 0.3rem solid var(--red);
+    }
+    .about-me p {
+        text-align: left; /* Keep justified alignment for the body text */
+        text-indent: 0; /* Prevent indentation for the paragraph */
+    }
+
+    .icon-container img {
+        width: 2.3rem;
+        height: 2.3rem;
+        margin: 0 6%;
+        align-items: center;
+    }
+    .icon-arxiv img{
+            width: 2rem;
+            height: 2rem;
+        }
+
+    .icon-container a:hover {
+        text-decoration: none;
+        border-bottom: 0.1rem solid var(--red);
+    }
+
+    .publications {
+        grid-column: 2 / 6;
+        grid-row: 1;
+        display: block;
+        align-items: left;
+        justify-content: center;
+        padding-left: 2%;
+        width: 97%;
+        border-bottom: 0.1rem solid var(--base0);
+    }
+
+    .bib-entry, .talk-entry {
+        margin-left: 2%;
+        margin-right: 1.5%;
+    }
+    .teaching-entry{
+        margin-right: 8%;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .talks {
+        grid-column: 2 / 4;
+        grid-row: 2;
+        padding-left: 2%;
+        border-right: 0.1rem solid var(--base0);
+        display: block;
+        align-items: left;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .teaching {
+        grid-column: 3;
+        grid-row: 4;
+        padding-left: 2%;
+        border-right: 0.1rem solid var(--base0);
+        display: block;
+        align-items: left;
+        justify-content: center;
+        width: 90%;
+    }
+
+    .talk-entry {
+        margin-bottom: 1.5%;
+    }
+
+    .background {
+        grid-column: 1 / 3;
+        grid-row: 4;
+        display: block;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        border-right: 0.1rem solid var(--base0);
+    }
+
+    .education-entry {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.7%;
+        font-size: 0.9rem; /* Slightly smaller font for a compact look */
+        width: 90%;
+        margin-left: 1.8%;
+    }
+
+    .education-institution,.talk-title, .teaching-class {
+        font-weight: bold;
+    }
+
+    .education-city, .talk-event, .teaching-role {
+        font-style: italic;
+        margin-left: 0.5%;
+    }
+
+    .education-degree, .talk-details, .teaching-lecturer {
+        margin-left: 0.5%;
+        color: var(--base1);
+    }
+
+    .education-years {
+        margin-left: auto;
+    }
+
+    /* Class for indented (sub-item) entries */
+    .sub-item {
+        padding-left: 8%; /* Add indentation to simulate sub-item */
+    }
+
+
+    .upcoming {
+        grid-column: 4 / 6;
+        grid-row: 2;
+        display: block;
+        align-items: left;
+        justify-content: center;
+        padding-left: 10%;
+        width: 80%;
+    }
+
+    .upcoming-title {
+        float: left;
+        margin-right: 20%; 
+        margin-top: 8%; /* Space above */
+    }
+
+    .smiley{
+        width:2.2rem; 
+        height:2.2rem;
+    }
+
+    .horizontal-line {
+        grid-column: 1 / 6;
+        grid-row: 3;
+        border-bottom: 0.1rem solid var(--base0);
+        margin-bottom: 0.5%;
+        width: 100%;
+    }
+
+    .extra {
+        grid-column: 4 / 6;
+        grid-row: 4;
+        display: block;
+        align-items: center;
+        justify-content: left;
+        width: 100%;
+        padding-left: 1%;
+    }
+    .extra-list{
+        font-size: 0.9rem;
+    }
+
+    a, h3 {
+        color: var(--base02);
+        text-decoration: none;
+        font-weight: 600;
+    }
+    h1{
+        color: var(--base02); 
+        text-decoration: none;
+        font-weight: 1500;
+    }
+    a:hover {
+        text-decoration: underline;
+        text-decoration-color: var(--red);
+    }
+
+    ul {
+        padding-left: 10%;
+        margin: 0;
+    }
+
+    ul li {
+        margin-bottom: 1.5%;
+    }
+
+    li::marker {
+        color: var(--red);
+    }
+
+    h3 a::after {
+        content: " \2022 \2022 \2022"; /* Unicode for bullet points */
+        color: var(--red); /* Color of the dots */
+        font-size: 0.9rem; /* Adjust the size as needed */
+        vertical-align: -0.2rem;
+        margin-left: -0.4rem;
+    }
+    
+    @media (max-width: 768px) {
+        body {
+            font-size: 0.8rem;
+        }
+
+        .megacontainer {
+            padding: 5%;
+            padding-bottom: 30%;
+            width: 85%;
+            grid-template-columns: 4.3fr 1.2fr 4.5fr;
+            grid-template-rows: auto auto auto auto auto auto;
+        }
+
+        .container-header{
+            display:block;
+            width: 100%;
+            margin: 0 auto; /* Center the container */
+            grid-template-rows: auto auto auto;
+            grid-template-columns: auto;
+            justify-content: center;
+        }
+        .header{
+            grid-row: 2;
+            width: 100%;
+            text-align: center; /* Center the content */
+            margin: 0; /* Remove left margin */
+            margin-bottom: 1%;
+        }
+        .header p {
+            font-size: 0.6rem;
+        }
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 2%;
+            margin-top: -3%;
+        }
+        
+        .profile-pic{
+            grid-row: 1;
+            padding-top: 40%;
+            width: 30%;
+            height: 30%;
+            margin: 0 auto;
+        }
+        .contact {
+            grid-row: 3;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column; /* Stack contact information and icons vertically */
+            justify-content: center;
+            position: relative;
+            align-items: center; /* Center the content */
+            width: 80%;
+            margin-bottom: 3.5%;
+            padding-bottom: 4%;
+            font-size: 0.7rem;
+            padding: 2%;
+        }
+        .icon-vertical {
+            position: static;
+            display: flex; /* Changed to flex for horizontal alignment */
+            flex-direction: row; /* Changed to row */
+            justify-content: center; /* Center the icons */
+            margin-top: 5%; /* Add some spacing above the icons */
+            width: 100%; /* Ensure the icon container takes the full width */
+        }
+
+        .icon-vertical img {
+            width: 1.3rem;
+            height: 1.3rem;
+            margin-bottom: -50%;
+        }
+
+        .about-me{
+            font-size: 0.9rem;
+            text-align: left;
+            grid-row: 1 / 4;
+        }
+      
+        .icon-container img {
+            width: 2rem;
+            height: 2rem;
+            margin: 0 6%;
+            margin-top: 5%;
+            align-items: baseline;
+        }
+        .icon-arxiv img{
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+        .drop-cap {
+            font-size: 1.3rem;
+            margin-right: 10%;
+            margin-bottom: 2%;
+        }
+        .underline {
+            border-bottom: 0.2rem solid var(--red);
+        }
+
+        .publications, .talk{
+            grid-column: 2 / 4;
+        }
+        .talks{
+            border-bottom: 0.1rem solid var(--base0);
+            border-right: 0;
+        }
+        .talk-entry{
+            margin-bottom: 5%;
+        }
+        .upcoming{
+            grid-column: 2 / 4;
+            grid-row: 3;
+            margin-left: 0;
+        }
+        .upcoming-title {
+            float: left;
+            margin-right: 30%; 
+            margin-top: 1%; /* Space above */
+            margin-bottom: 0%;
+            margin-left: -8%;
+        }
+        .smiley{
+            width:1.7rem; 
+            height:1.7rem;
+        }
+        .horizontal-line{
+            grid-column: 1 / 4;
+            grid-row:4;
+        }
+
+        .background {
+            grid-row: 5 / 7;
+            grid-column: 1 / 3;
+        }
+
+        .education-entry {
+            display: flex;
+            flex-direction: column; /* Stack each element vertically */
+            justify-content: flex-start;
+            align-items: flex-start; /* Ensure all elements align to the left */
+            margin-bottom: 3%;
+            width: 100%;
+        }
+
+        .education-institution, .education-city, .education-degree, .education-years{
+            font-size: 0.7rem; /* Adjust size for mobile */
+            margin-bottom: 1%; /* Add some spacing between lines */
+            display: block;
+            text-align: left;
+        }
+        .education-description{
+            font-size: 0.1rem;
+        }
+
+        .education-description{
+            font-size: 0.7rem !important;
+        }
+        .education-years {
+            align-self: flex-start;
+            margin-left:0%
+        }
+
+        .teaching {
+            padding-right: 1%;
+            grid-row: 5;
+            border-bottom: 0.1rem solid var(--base0);
+            border-right: 0;
+            padding-bottom: 0;
+            padding-left: 8%;
+        }
+
+        .teaching-entry{
+            font-size: 0.7rem;
+        }
+
+        .extra{
+            grid-column: 3;
+            grid-row: 6;
+            padding-left: 8%;
+        }
+        .extra-list{
+            font-size: 0.7rem;
+            padding-right: 10%;
+        }
+
+        h3 {
+            font-size: 0.8rem;
+        }
+        
+        h3 a::after {
+            font-size: 0.7rem; /* Adjust the size as needed */
+            vertical-align: -0.15rem;
+            margin-left: -0.2rem;
+        }
+        
+
+    }
+
+
+
+
+        
+
+    /* SUB PAGES STYLE */
+
+  /* Ensure the directory indicator is on the top left */
+  .directory-indicator {
+    grid-column: 1 / 2; /* Placing it in the first column */
+    grid-row: 1;
+    align-self: self-start;
+    justify-self: start; /* Aligns to the left */
+    font-size: 0.9rem;
+    border-bottom: 0.1rem solid var(--red);
+    padding-bottom: 0.5%; /* Removes any padding under the text */
+    margin-bottom: 0; /* Adjust the margin to bring the border closer to the text */
+    display: inline-block; /* Ensure the width of the element matches the text */
+}
+
+/* Ensure the title is centered at the top */
+.title-page {
+    grid-column: 1 / -1; /* Spans across all columns */
+    grid-row: 1; /* Also in the first row */
+    justify-self: center; /* Centering the title horizontally */
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.title-page h1 {
+    font-size: 2rem;
+    color: var(--base03);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+.central-line {
+    width: 70%; /* Adjust width as needed */
+    height: 0.01rem; /* Adjust thickness */
+    background-color: var(--base0); /* Adjust color */
+    margin: 0 auto; /* Center the line */
+    margin-top: 1rem;
+    border-color: var(--base0);
+  }
+
+/* BACKGROUND PAGE STYLE */ 
+
+
+
+.background-megacontainer{
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+
+}
+
+.uni {
+    display: block;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+.education-description {
+    display: block; /* Ensures it takes up the full width and goes to the next line */
+    margin-top: 0.3rem; /* Adds space between the main content and the description */
+    width: 100%; /* Ensure it takes up the full width */
+    padding-left: 1.8%; /* Align with the education-entry content */
+    border-left: 0.1rem solid var(--base0);
+    margin-left: 5%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+
+
+.background-education-entry {
+    margin-bottom: 1%;
+    font-size: 1rem; /* Slightly smaller font for a compact look */
+    width: 90%;
+    margin-left: 1.8%;
+}
+
+.sfg-description {
+    margin-top: -0.8rem; /* Reduce the space above the description */
+    padding-left: 1.8%; /* Ensure consistency with other entries */
+}
+
+
+.uni, .grants {
+    display: flex;
+    flex-direction: column;
+}
+
+/* TALK PAGE STYLE */   
+.talks-megacontainer {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    font-size: 1.2rem;
+}
+
+.pdf-viewer {
+    border: none;
+    margin: 10px 0;
+    width: 21rem;
+    height: 13rem; /* Set to desired height */
+    border: none;
+    overflow: hidden;  /* Prevents scrollbars inside PDF viewer */
+}
+ 
+embed:focus {
+    outline: none;
+}
+
+
+
+
+
+
+/* Ensure the media container doesn't overflow */
+.talk-entry {
+    overflow-x: hidden;
+}
+/* Container that holds the title, event, and details */
+.presentation-container {
+    text-align: center;  /* Centers the title, event, and details */
+
+    overflow: hidden;  /* Prevents scrollbars */
+}
+
+/* Flexbox container for image and PDF side by side */
+.media-container {
+    display: flex;
+    justify-content: center; /* Adds space between the two items */
+    align-items: center; /* Vertically centers the image and PDF */
+    gap: 1rem; /* Adds some space between the image and PDF */
+    max-width: 100%;  /* Prevents overflow from the parent container */
+    overflow: hidden; /* Prevents scrollbars */
+    margin-bottom: 1rem;
+}
+
+/* Image styling */
+.media-container img {
+    max-width: 13rem;
+    height: auto;  /* Maintains aspect ratio */
+}
+
+/* Ensure the media container doesn't overflow */
+.talk-entry {
+    overflow-x: hidden; /* Prevents horizontal scrollbars */
+    overflow-y: hidden; /* Prevents vertical scrollbars */
+}
+
+@media (max-width: 768px) {
+
+    .talks-megacontainer {
+        font-size: 0.8rem;
+    }
+
+    .pdf-viewer {
+        width: 8rem;
+        height: 6rem; /* Set to desired height */
+        border: none;
+    }
+
+    .media-container img {
+        max-width: 6rem;
+        height: auto;
+    }
+}
