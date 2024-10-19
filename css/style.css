@@ -321,13 +321,6 @@
         color: var(--red);
     }
 
-    h3 a::after {
-        content: " \2022 \2022 \2022"; /* Unicode for bullet points */
-        color: var(--red); /* Color of the dots */
-        font-size: 0.9rem; /* Adjust the size as needed */
-        vertical-align: -0.2rem;
-        margin-left: -0.4rem;
-    }
     
     @media (max-width: 768px) {
         body {
