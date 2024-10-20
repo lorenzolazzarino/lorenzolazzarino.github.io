@@ -444,7 +444,6 @@ h3 a::after {
     margin-left: -0.4rem;
 }
 
-
 /* Ensure the media container doesn't overflow */
 .talk-entry {
     overflow-x: hidden;
@@ -526,6 +525,9 @@ h3 a::after {
             font-size: 2rem;
             margin-bottom: 2%;
             margin-top: -3%;
+        }
+        .header h1 a:hover{
+            text-decoration: none;
         }
         
         .profile-pic{
