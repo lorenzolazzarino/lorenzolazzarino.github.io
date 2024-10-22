@@ -19,7 +19,7 @@
     }
 
     body {
-        font-family: 'Inconsolata', monospace;
+        font-family: 'Fira Code', monospace;
         font-size: 1rem; 
         color: var(--base01);
         margin: 0;
