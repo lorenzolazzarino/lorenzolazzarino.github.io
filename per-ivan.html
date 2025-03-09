@@ -19,6 +19,8 @@
         .btn { background: #073642; color: #fdf6e3; border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; }
         .btn.dislike { background: #073642; }
         .profile { position: absolute; bottom: 360px; width: 100%; text-align: center; font-size: 1.2rem; font-weight: bold; color: #fdf6e3; }
+        .itinerary { font-size: 1rem; }
+        .underline { text-decoration: underline; color: inherit; }
     </style>
 </head>
 <body>
@@ -31,7 +33,7 @@
             <button class="btn" id="like-btn">&#10084;</button>
         </div>
     </div>
-    <div class="message" id="message">Che ne pensi se riniziamo da capo, ma consapevoli del bello di noi, in una nuova città! Potrei venire a te, e poi passare il weekend a Bruges!</div>
+    <div class="message" id="message"></div>
 
     <script>
         const photo = document.getElementById('photo');
@@ -66,10 +68,10 @@
             for (let i = 0; i < 15; i++) {
                 const icon = document.createElement('div');
                 icon.className = 'icon-float';
-                icon.innerHTML = "&#10084;"; // Only hearts now
+                icon.innerHTML = "&#10084;";
                 icon.style.left = `${Math.random() * 100}%`;
                 icon.style.top = `${Math.random() * 100}%`;
-                document.body.appendChild(icon); // Spread icons across the whole page
+                document.body.appendChild(icon);
                 setTimeout(() => icon.remove(), 3000);
             }
             setTimeout(() => {
@@ -77,7 +79,16 @@
                 photo.style.display = 'none';
                 title.style.position = 'absolute';
                 title.style.top = '10%';
-                message.innerText = 'Che ne pensi se riniziamo da capo, ma consapevoli del bello di noi, in una nuova città! Potrei venire a te, e poi passare il weekend a Bruges!';
+                message.innerHTML = `<div class='itinerary'>
+                    <strong>Che ne pensi se riniziamo da capo, ma consapevoli del bello di noi, in una nuova città! Potrei venire a te, e poi passare il weekend a Bruges! Che ne pensi?</strong><br><br>
+                    <strong>Itinerario:</strong><br>
+                    🚆 (io) London → Bruxelles, Fri, 14 Mar, 13:01 - 16:06<br>
+                    🚌 Bruxelles → Bruges, Fri, 14 Mar, 19:15 - 20:35<br>
+                    🚌 Bruges → Bruxelles, Sun, 16 Mar, 16:30 - 18:05<br>
+                    🚆 (io) Bruxelles → London, Sun, 16 Mar, 19:52 - 20:57<br>
+                    <br>
+                    🏨 <a href='https://www.booking.com/hotel/be/leopold.en-gb.html' target='_blank' class='underline'>Hotel Leopold</a>
+                </div> `;
                 message.style.display = 'block';
             }, 1000);
         }
@@ -91,12 +102,14 @@
                 photo.style.display = 'none';
                 title.style.position = 'absolute';
                 title.style.top = '10%';
-                message.innerText = 'You disliked it!';
+                message.innerText = 'Lo capisco, possiamo discuterne meglio?';
                 message.style.display = 'block';
             }, 1000);
         }
     </script>
 </body>
 </html>
+
+
 
 
