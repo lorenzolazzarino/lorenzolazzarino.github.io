@@ -346,6 +346,9 @@
     display: inline-block; /* Ensure the width of the element matches the text */
 }
 
+  .directory-indicator a {
+	  text-decoration: none;
+  }
 /* Ensure the title is centered at the top */
 .title-page {
     grid-column: 1 / -1; /* Spans across all columns */
