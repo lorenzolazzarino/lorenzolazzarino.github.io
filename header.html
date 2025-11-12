@@ -26,6 +26,62 @@
             </div>
         </div>
     </div>
+
+    <!-- ADD around existing .container-header in header.html -->
+<div id="site-header" class="header-wrapper">
+  <div class="container-header"> 
+    <!-- <<< your existing container-header content goes here unchanged >>> -->
+  </div>
+
+  <!-- breadcrumb / indicator that will appear on the right when header is shrunk -->
+  <div id="header-breadcrumb" class="header-breadcrumb" aria-hidden="true"></div>
+</div>
+ 
 </header>
+<script>
+(function(){
+  const headerWrapper = document.getElementById('site-header');
+  const headerBreadcrumb = document.getElementById('header-breadcrumb');
+  if (!headerWrapper) return;
+
+  const SHRINK_SCROLL_PX = 120; // change to 0 for immediate stick
+
+  function syncBreadcrumb(){
+    const dir = document.querySelector('.directory-indicator');
+    if (dir && headerBreadcrumb) {
+      // copy innerHTML so markup (links) is preserved
+      headerBreadcrumb.innerHTML = dir.innerHTML.trim();
+      // optional: hide the original on-page indicator to avoid duplication:
+      // dir.style.display = 'none';
+    }
+  }
+
+  function onScroll(){
+    const sc = window.scrollY || window.pageYOffset;
+    if (sc > SHRINK_SCROLL_PX) {
+      headerWrapper.classList.add('fixed', 'shrink');
+      // set body padding-top so content doesn't jump (match new header height)
+      const h = headerWrapper.getBoundingClientRect().height;
+      document.body.style.paddingTop = h + 'px';
+    } else {
+      headerWrapper.classList.remove('fixed', 'shrink');
+      document.body.style.paddingTop = '';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    syncBreadcrumb();
+    onScroll();
+  });
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', () => {
+    if (headerWrapper.classList.contains('fixed')) {
+      const h = headerWrapper.getBoundingClientRect().height;
+      document.body.style.paddingTop = h + 'px';
+    }
+  });
+})();
+</script>
 
   
