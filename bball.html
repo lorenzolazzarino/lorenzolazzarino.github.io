@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Lorenzo Lazzarino - Homepage</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap">
+    <link rel="shortcut icon" href="images/user-3.ico" type="image/x-icon"/>
+    
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div id="header"></div>
+    <script>
+        fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        })
+        .catch(error => {
+            document.getElementById('header').innerHTML = "<p>Failed to load header</p>";
+            console.error("Error loading header:", error);
+        });
+
+    </script>
+    
+
+    <main>
+        <div class="megacontainer talks-megacontainer">
+            <div class="directory-indicator">
+                 <a href="/">Home</a> / Plus,
+            </div>
+            
+            <!-- Title, event, and details -->
+            <div class="title-page">
+                <h1>basketball</h1>
+            </div>
+
+            <div class="talk-entry">
+                <div class="presentation-container">
+                    <!-- Centered Title, Event, and Details -->
+                   
+                            <span class="talk-title">Head coach</span><br>
+                            <span class="talk-event">Oxford woman first team</span><br>
+                            <span class="talk-details">2025-26 season</span>
+                        </div>
+                   
+
+                    <!-- Flexbox container for image and PDF next to each other -->
+                    <div class="bball-picture">
+                        <img src="images/bball/2025-26/team-picture.JPG" alt="Sorry you are missing a picture of an amazing team " >
+                        <img src="images/bball/2025-26/me-team.jpeg" alt="Sorry you are missing a picture of me coaching!" >
+            </div>
+            </div>
+
+            <div class="talk-entry">
+                <div class="presentation-container">
+                    <!-- Centered Title, Event, and Details -->
+                   
+                            <span class="talk-title">Assistant coach</span><br>
+                            <span class="talk-event">Oxford woman first team</span><br>
+                            <span class="talk-details">2024-25 season</span>
+                        </div>
+                   
+
+                    <!-- Flexbox container for image and PDF next to each other -->
+                    <div class="bball-picture">
+                        <img src="images/bball/W1-2024-groupPhoto.jpeg" alt="Sorry you are missing a picture of an amazing team ">
+                        <img src="images/bball/serious-team.JPG" alt="Sorry you are missing a picture of a very serious team!">
+                </div>
+            </div>
+
+    </main>
+
+</body>
+</html>
+
