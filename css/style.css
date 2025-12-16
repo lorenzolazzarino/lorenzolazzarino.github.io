@@ -617,6 +617,92 @@ embed:focus {
 	text-decoration: none;
 }
 
+/* Popup trigger — look like other links */
+.popup-trigger {
+  cursor: pointer;
+  color: var(--base02);        /* same as your other links */
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+  text-underline-offset: 0.15em;
+  font-weight: 600;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  background: rgba(0, 0, 0, 0.55);
+  display: none;              /* controlled by JS */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+/* Modal title */
+.modal-title {
+  color: var(--base02);   /* your site-wide blue */
+  font-size: 1.35rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Modal box (sharp edges, site color scheme) */
+.modal-box {
+  background: var(--base3);       /* page background tone */
+  color: var(--base01);           /* body text color */
+  padding: 1.8rem 1.6rem;
+  width: min(420px, 90%);
+  max-width: 420px;
+  text-align: left;
+  border-radius: 0;               /* SHARP edges */
+  border: 0.12rem solid var(--base0);
+  font-family: 'Inconsolata', monospace;
+  position: relative;
+  box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.08);
+}
+
+/* Modal title and paragraphs — match site typographic feel */
+.modal-box p {
+  margin: 0 0 0.6rem 0;
+  line-height: 1.3;
+  font-size: 1.05rem;
+}
+.modal-box ul {
+  font-size: 1em;
+}
+.modal-box li {
+  margin-bottom: 0.4rem;
+}
+
+/* Close X (top-right) */
+.modal-close-x {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  background: transparent;
+  border: none;
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--red);          /* your site-wide red */
+  padding: 0.2rem;
+  transition: transform 0.12s ease;
+}
+
+/* Small hover affordance for X */
+.modal-close-x:hover {
+  transform: scale(1.12);
+}
+
+/* Remove any leftover big close button style if present */
+.modal-box button.large-close {
+  display: none !important;
+}
+
+/* Accessibility: make focus visible for keyboard users */
+.modal-close-x:focus {
+  outline: 0.12rem solid var(--blue);
+  outline-offset: 3px;
+}
+
 @media (max-width: 768px) {
         body {
             font-size: 0.8rem;

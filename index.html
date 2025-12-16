@@ -97,7 +97,7 @@
                 </div>
 
                 <div class="teaching">
-                    <h3><a href="teaching.html">Teaching</a></h3>
+			<h3> <a href="teaching.html" id="teachingLink" class="popup-link">Teaching</a> </h3>
                     <div class="teaching-entry">
                         <span class="teaching-role">Tutor - MMSC</span> <br>
                         <span class="teaching-class"><a href="https://courses.maths.ox.ac.uk/course/view.php?id=5024" target="_blank">Numerical Linear Algebra</a></span><br>
@@ -177,7 +177,7 @@
                         <li>I love traveling</li>
                         <!-- <li>I take <a href="plus-tf.html">Table Football</a> way too seriously</li> -->
                         <li>I take Table Football way too seriously</li>
-                        <li>I spend too many hours choosing a color scheme for any software I use</li>
+			<li> I spend too many hours choosing a <span id="colorSchemesTrigger" class="popup-trigger">color scheme</span> for any software I use </li>
                         <li>I coach the <a href="bball.html">Woman's first basketball team</a> of Oxford University</ul>
                 </div>
 
@@ -199,6 +199,159 @@
       document.getElementById('footer').innerHTML = "<p>Failed to load footer</p>";
       console.error("Error loading footer:", error);
     });
+</script>
+
+<!-- Color Schemes Popup -->
+<div id="colorSchemesModal" class="modal-overlay" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button id="closeModalX" class="modal-close-x" aria-label="Close">✕</button>
+    <p id="modalTitle" class="modal-title"><strong>My color schemes philosophy</strong></p>
+    <p>
+                <ul class="extra-list">
+			<li>Spend more time customizing the software than actually using it</li>
+			<li>Spend hours creating a new color palette from scratch, only to realize professionals do it better</li>
+			<li>Dark mode is non-negotiable (see contradiction below)</li>
+			<li>Every single part of your laptop must look the same (see contradiction below)</li>
+			<li>Your palette should look geeky, retro, dark, and vaguely original (spoiler: it won’t)</li>
+			<li>Choose <a href="https://github.com/morhetz/gruvbox" target="_blank">Gruvbox</a> for everything</li>
+			<li> Contradiction 1: Use light colors for your website (of course, <a href="https://ethanschoonover.com/solarized/" target="_blank">Solarized</a> is the right choice) </li>
+			<li> Contradiction 2: For notes, use Obsidian with the <a href="https://github.com/sr-campelo/retronotes" target="_blank">RetroNotes</a> template </li>
+			<li>Eventually, try using your software</li>
+                </div>
+</p>
+  </div>
+</div>
+
+<!-- Teaching modal (shared style with other modals) -->
+<div id="teachingModal" class="modal-overlay" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="teachingModalTitle">
+    <button id="teachingModalClose" class="modal-close-x" aria-label="Close teaching panel">✕</button>
+    <div id="teachingModalContent" class="modal-content">
+      <!-- remote content will be injected here -->
+      <p style="opacity:.6">Loading…</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- For color palette pop-up -->
+<script>
+  (function() {
+    const trigger = document.getElementById('colorSchemesTrigger');
+    const modal = document.getElementById('colorSchemesModal');
+    const closeX = document.getElementById('closeModalX');
+
+    if (!trigger || !modal || !closeX) return;
+
+    function openModal() {
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden', 'false');
+      // focus the close button for keyboard users
+      closeX.focus();
+      document.body.style.overflow = 'hidden'; // prevent background scroll
+    }
+    function closeModal() {
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = ''; // restore scroll
+      trigger.focus();
+    }
+
+    trigger.addEventListener('click', openModal);
+    closeX.addEventListener('click', closeModal);
+
+    // close when clicking outside the modal box
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // ESC closes modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+    });
+  })();
+</script>
+
+
+<!-- For teaching pop-up -->
+<script>
+(function(){
+  const link = document.getElementById('teachingLink');
+  const modal = document.getElementById('teachingModal');
+  const modalContent = document.getElementById('teachingModalContent');
+  const closeBtn = document.getElementById('teachingModalClose');
+  let cachedHTML = null;
+
+  if (!link || !modal || !modalContent || !closeBtn) return;
+
+  async function loadTeaching() {
+    if (cachedHTML) return cachedHTML;
+    try {
+      const res = await fetch(link.getAttribute('href'), {cache: 'no-store'});
+      if (!res.ok) throw new Error('Failed to fetch teaching page');
+      const text = await res.text();
+
+      // parse and extract only the main teaching container
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(text, 'text/html');
+      const container = doc.querySelector('.teaching-megacontainer') || doc.querySelector('main') || doc.body;
+
+      // sanitize minimally: remove header/footer inside the fragment if present
+      const clone = container.cloneNode(true);
+
+      // remove any <script> tags in the fetched fragment (we don't want them executed)
+      clone.querySelectorAll('script').forEach(s => s.remove());
+
+      cachedHTML = clone.innerHTML;
+      return cachedHTML;
+    } catch (err) {
+      console.error(err);
+      return `<p style="color:var(--red)">Could not load teaching content.</p><p>${err.message}</p>`;
+    }
+  }
+
+  async function openModal() {
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  async function showTeachingModal(e) {
+    e.preventDefault();
+    // show a loading placeholder
+    modalContent.innerHTML = '<p style="opacity:.6">Loading…</p>';
+    await openModal();
+    const html = await loadTeaching();
+    modalContent.innerHTML = html;
+
+    // optional: re-scope links that would navigate away — open them in new tab
+    modalContent.querySelectorAll('a').forEach(a => {
+      const href = a.getAttribute('href');
+      if (href && !href.startsWith('#') && !href.startsWith('javascript:')) {
+        a.setAttribute('target', '_blank');
+        a.setAttribute('rel', 'noopener noreferrer');
+      }
+    });
+  }
+
+  function closeModal() {
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    link.focus();
+  }
+
+  // event listeners
+  link.addEventListener('click', showTeachingModal);
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+  });
+})();
 </script>
 
 </body>
