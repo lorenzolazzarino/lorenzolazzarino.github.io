@@ -71,12 +71,12 @@
                 </div>
                 
                 <div class="publications">
-                    <h3>Publications</h3>
-                    <p class="bib-entry">[2] <a href="https://arxiv.org/pdf/2502.17626v2"  target="_blank"><em>Preconditioned normal equations for solving discretised partial differential equations</em></a>,
-                        L.L., Y. Nakatsukasa, U. Zerbinati, 2025, <a href="https://arxiv.org/abs/2502.17626v2"  target="_blank">Arxiv</a>  </p>
-                        <p class="bib-entry">[1] <a href="https://epubs.siam.org/doi/epdf/10.1137/24M169343X"  target="_blank"><em>Matrix perturbation analysis of methods for extracting singular values from approximate singular subspaces</em></a>,
-                        L.L., H. Al Daas, Y. Nakatsukasa, 2024, <a href="https://epubs.siam.org/doi/abs/10.1137/24M169343X"  target="_blank">SIMAX</a>  </p>
+                    <h3><a href="publications.html" id="publicationsLink" class="popup-link">Publications</a></h3>
+                    <div id="latestPublications">
+                        <p style="opacity:.6">Loading…</p>
+                    </div>
                 </div>
+
                 
                 <div class="talks">
                     <h3><a href="talks.html">Talks</a></h3>
@@ -242,6 +242,16 @@
 </div>
 
 
+<!-- Publications modal -->
+<div id="publicationsModal" class="modal-overlay" aria-hidden="true">
+  <div class="modal-box modal-box-wide" role="dialog" aria-modal="true" aria-labelledby="publicationsModalTitle">
+    <button id="publicationsModalClose" class="modal-close-x" aria-label="Close publications panel">✕</button>
+    <div id="publicationsModalContent" class="modal-content">
+      <p style="opacity:.6">Loading…</p>
+    </div>
+  </div>
+</div>
+
 <!-- For color palette pop-up -->
 <script>
   (function() {
@@ -280,7 +290,110 @@
   })();
 </script>
 
+        <!-- Publications automatic add -->
+<script>
+(function(){
+  const link = document.getElementById('publicationsLink');
+  const latestBox = document.getElementById('latestPublications');
 
+  const modal = document.getElementById('publicationsModal');
+  const modalContent = document.getElementById('publicationsModalContent');
+  const closeBtn = document.getElementById('publicationsModalClose');
+
+  let cachedDoc = null;
+
+  if (!link || !latestBox || !modal || !modalContent || !closeBtn) return;
+
+  async function fetchPublicationsDoc() {
+    if (cachedDoc) return cachedDoc;
+
+    const res = await fetch(link.getAttribute('href'), {cache: 'no-store'});
+    if (!res.ok) throw new Error('Failed to fetch publications page');
+
+    const text = await res.text();
+    const parser = new DOMParser();
+    cachedDoc = parser.parseFromString(text, 'text/html');
+    return cachedDoc;
+  }
+
+  function extractBibEntries(doc) {
+    // Grab .bib-entry from the publications page
+    return Array.from(doc.querySelectorAll('.bib-entry'));
+  }
+
+  async function populateLatestTwo() {
+    try {
+      const doc = await fetchPublicationsDoc();
+      const entries = extractBibEntries(doc);
+
+      // Take first two (so keep publications.html newest-first)
+      const topTwo = entries.slice(0, 2).map(e => e.outerHTML).join('');
+      latestBox.innerHTML = topTwo || '<p style="opacity:.6">No publications yet.</p>';
+    } catch (err) {
+      console.error(err);
+      latestBox.innerHTML = '<p style="color:var(--red)">Could not load publications.</p>';
+    }
+  }
+
+  async function openModal() {
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  async function showPublicationsModal(e) {
+    e.preventDefault();
+    modalContent.innerHTML = '<p style="opacity:.6">Loading…</p>';
+    await openModal();
+
+    try {
+      const doc = await fetchPublicationsDoc();
+      const container =
+        doc.querySelector('#publicationsList') ||
+        doc.querySelector('.publications-megacontainer') ||
+        doc.querySelector('main') ||
+        doc.body;
+
+      const clone = container.cloneNode(true);
+      clone.querySelectorAll('script').forEach(s => s.remove());
+
+      modalContent.innerHTML = clone.innerHTML;
+
+      // Make links open in new tab
+      modalContent.querySelectorAll('a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (href && !href.startsWith('#') && !href.startsWith('javascript:')) {
+          a.setAttribute('target', '_blank');
+          a.setAttribute('rel', 'noopener noreferrer');
+        }
+      });
+    } catch (err) {
+      console.error(err);
+      modalContent.innerHTML =
+        `<p style="color:var(--red)">Could not load publications content.</p><p>${err.message}</p>`;
+    }
+  }
+
+  function closeModal() {
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    link.focus();
+  }
+
+  // 1) Fill homepage with latest two on load
+  populateLatestTwo();
+
+  // 2) Open popup on click
+  link.addEventListener('click', showPublicationsModal);
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+  });
+})();
+</script>
 <!-- For teaching pop-up -->
 <script>
 (function(){

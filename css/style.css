@@ -703,6 +703,18 @@ embed:focus {
   outline-offset: 3px;
 }
 
+/* Wider modal for Publications */
+.modal-box-wide {
+  width: min(900px, 94%);
+  max-width: 900px;
+}
+
+/* In the publications popup, keep each publication on one line */
+#publicationsModalContent .bib-entry {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 @media (max-width: 768px) {
         body {
             font-size: 0.8rem;
