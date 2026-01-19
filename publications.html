@@ -8,23 +8,9 @@
 </head>
 
 <body>
-    <!-- HEADER -->
-    <div id="header"></div>
-
-    <script>
-        fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header').innerHTML = data;
-        })
-        .catch(error => {
-            document.getElementById('header').innerHTML = "<p>Failed to load header</p>";
-            console.error("Error loading header:", error);
-        });
-
-    </script>
   <main>
     <div class="megacontainer publications-megacontainer">
+    <div id="publicationsContent">
       <div class="title-page">
         <h1>Publications</h1>
       </div>
@@ -44,6 +30,7 @@
         <p class="bib-entry">[1] <a href="https://epubs.siam.org/doi/epdf/10.1137/24M169343X" target="_blank"><em>Matrix perturbation analysis of methods for extracting singular values from approximate singular subspaces</em></a>,
           L.L., H. Al Daas, Y. Nakatsukasa, 2024, <a href="https://epubs.siam.org/doi/abs/10.1137/24M169343X" target="_blank">SIMAX</a></p>
       </div>
+    </div>
     </div>
   </main>
 </body>

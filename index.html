@@ -350,9 +350,8 @@
     try {
       const doc = await fetchPublicationsDoc();
       const container =
-        doc.querySelector('#publicationsList') ||
-        doc.querySelector('.publications-megacontainer') ||
-        doc.querySelector('main') ||
+        doc.querySelector('#publicationsContent') ||
+        doc.querySelector('main');
         doc.body;
 
       const clone = container.cloneNode(true);
