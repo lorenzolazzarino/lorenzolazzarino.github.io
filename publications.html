@@ -8,6 +8,21 @@
 </head>
 
 <body>
+    <!-- HEADER -->
+    <div id="header"></div>
+
+    <script>
+        fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        })
+        .catch(error => {
+            document.getElementById('header').innerHTML = "<p>Failed to load header</p>";
+            console.error("Error loading header:", error);
+        });
+
+    </script>
   <main>
     <div class="megacontainer publications-megacontainer">
       <div class="title-page">
@@ -16,13 +31,15 @@
 
       <div id="publicationsList">
         <!-- Keep newest first 
-        <p class="bib-entry">[3] <a href="LINK_TO_PDF" target="_blank"><em>NEW TITLE</em></a>,
+        <p class="bib-entry">[n] <a href="LINK_TO_PDF" target="_blank"><em>TITLE</em></a>,
           L.L., ..., 2026, <a href="VENUE_LINK" target="_blank">Venue</a></p>
         -->
 
+        <p class="bib-entry">[3] <a href="https://arxiv.org/pdf/2601.11493" target="_blank"><em>Efficient error estimators for Generalized Nyström</em></a>,
+          L.L., K. J. Pearce, N. Pritchard, 2026, <a href="https://arxiv.org/abs/2601.11493" target="_blank">ArXiv</a></p>
 
         <p class="bib-entry">[2] <a href="https://arxiv.org/pdf/2502.17626v2" target="_blank"><em>Preconditioned normal equations for solving discretised partial differential equations</em></a>,
-          L.L., Y. Nakatsukasa, U. Zerbinati, 2025, <a href="https://arxiv.org/abs/2502.17626v2" target="_blank">Arxiv</a></p>
+          L.L., Y. Nakatsukasa, U. Zerbinati, 2025, <a href="https://arxiv.org/abs/2502.17626v2" target="_blank">ArXiv</a></p>
 
         <p class="bib-entry">[1] <a href="https://epubs.siam.org/doi/epdf/10.1137/24M169343X" target="_blank"><em>Matrix perturbation analysis of methods for extracting singular values from approximate singular subspaces</em></a>,
           L.L., H. Al Daas, Y. Nakatsukasa, 2024, <a href="https://epubs.siam.org/doi/abs/10.1137/24M169343X" target="_blank">SIMAX</a></p>
