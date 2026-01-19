@@ -702,18 +702,22 @@ embed:focus {
   outline: 0.12rem solid var(--blue);
   outline-offset: 3px;
 }
-/* Wider modal for Publications 
+/* Wider modal for Publications */
 .modal-box-wide {
   width: min(900px, 94%);
   max-width: 900px;
 }
 
- In the publications popup, keep each publication on one line 
+ /*In the publications popup, keep each publication on one line */
 #publicationsModalContent .bib-entry {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}*/
+  white-space: normal;        /* allow wrapping */
+  overflow-wrap: anywhere;    /* break long words/URLs if needed */
+  word-break: break-word;
+}
+.bib-entry {
+  margin-bottom: 1.1em;
+  line-height: 1.6;
+}
 @media (max-width: 768px) {
         body {
             font-size: 0.8rem;
