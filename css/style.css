@@ -750,6 +750,25 @@ embed:focus {
   border: none;
   padding: 0.35rem 0;
 }
+
+/* Ensure injected page titles inside modals look like the site's Title (matches Teaching) */
+.modal-content .title-page {
+  grid-column: 1 / -1;   /* harmless if modal isn't grid */
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0.9rem;
+}
+
+/* Style h1/h3 inside title-page when injected into a modal */
+.modal-content .title-page h1,
+.modal-content .title-page h3 {
+  font-size: 2rem;                 /* matches Teaching */
+  color: var(--base03);            /* same dark color used by title-page h1 */
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.05;
+}
 /* small screens adjustments */
 @media (max-width: 768px) {
   .upcoming-entry {

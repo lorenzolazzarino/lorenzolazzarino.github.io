@@ -165,7 +165,10 @@
                 </div>
 
                 <div class="upcoming">
-                  <h3><a href="upcoming.html" id="upcomingLink" class="popup-link">Upcoming</a></h3>
+                <h3>
+                  <!-- keep href for progressive enhancement, but also prevent default as defensive fallback -->
+                  <a href="upcoming.html" id="upcomingLink" class="popup-link" role="button" onclick="event.preventDefault()">Upcoming</a>
+                </h3>
                   <div id="upcomingPreview">
                     <p style="opacity:.6">Loading…</p>
                   </div>
@@ -203,7 +206,7 @@
 
 <!-- Upcoming modal (shared style with other modals) -->
 <div id="upcomingModal" class="modal-overlay" aria-hidden="true">
-  <div class="modal-box modal-box-wide" role="dialog" aria-modal="true" aria-labelledby="upcomingModalTitle">
+  <div class="modal-box modal-box-wide" role="dialog" aria-modal="true">
     <button id="upcomingModalClose" class="modal-close-x" aria-label="Close upcoming panel">✕</button>
     <div id="upcomingModalContent" class="modal-content">
       <p style="opacity:.6">Loading…</p>
@@ -323,7 +326,7 @@
       const next = pickClosestFuture(entries);
       if (!next) {
         // No future events: show fallback (icon + "I'll be in Oxford...")
-        preview.innerHTML = '<p><img src="images/icons8-home-96.png" alt="" class="smiley" style="width:1.6rem;vertical-align:middle;margin-right:.5rem;"> You\\'ll find me in Oxford for a little bit!</p>';
+        preview.innerHTML = '<p><img src="images/icons8-home-96.png" alt="" class="smiley" style="width:1.6rem;vertical-align:middle;margin-right:.5rem;"> You\'ll find me in Oxford for a little bit!</p>';
         return;
       }
 
@@ -336,7 +339,7 @@
 
     } catch (err) {
       // network or parse error: fallback to the house icon + text
-      preview.innerHTML = '<p><img src="images/icons8-home-96.png" alt="" class="smiley" style="width:1.6rem;vertical-align:middle;margin-right:.5rem;"> You\\'ll find me in Oxford for a little bit!</p>';
+      preview.innerHTML = '<p><img src="images/icons8-home-96.png" alt="" class="smiley" style="width:1.6rem;vertical-align:middle;margin-right:.5rem;"> You\'ll find me in Oxford for a little bit!</p>';
     }
   }
 
