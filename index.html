@@ -165,16 +165,11 @@
                 </div>
 
                 <div class="upcoming">
-                    <h3 class="upcoming-title">Upcoming</h3>
-                        <!--   
-                             <p> <img src="images/icons8-canopy-96.png" class="smiley" alt=""></p>
-                            <span> You'll find me in Oxford for a little bit!</span>
-                          --> 
-                    <p><em>17 March 2026</em><br></p> 
-                    <span>I'll present a poster at <a href="https://stemforbritain.org.uk/">STEM for Britain</a> in Parliament!</span> 
-                    
-                    
-                </div> 
+                  <h3><a href="upcoming.html" id="upcomingLink" class="popup-link">Upcoming</a></h3>
+                  <div id="upcomingPreview">
+                    <p style="opacity:.6">Loading…</p>
+                  </div>
+                </div>
 
                 <div class="extra">
                     <h3>Plus,</h3>
@@ -206,6 +201,203 @@
     });
 </script>
 
+<!-- Upcoming modal (shared style with other modals) -->
+<div id="upcomingModal" class="modal-overlay" aria-hidden="true">
+  <div class="modal-box modal-box-wide" role="dialog" aria-modal="true" aria-labelledby="upcomingModalTitle">
+    <button id="upcomingModalClose" class="modal-close-x" aria-label="Close upcoming panel">✕</button>
+    <div id="upcomingModalContent" class="modal-content">
+      <p style="opacity:.6">Loading…</p>
+    </div>
+  </div>
+</div>
+
+
+<script>
+(function(){
+  const link = document.getElementById('upcomingLink');
+  const preview = document.getElementById('upcomingPreview');
+  const modal = document.getElementById('upcomingModal');
+  const modalContent = document.getElementById('upcomingModalContent');
+  const closeBtn = document.getElementById('upcomingModalClose');
+  let cachedDoc = null;
+
+  if (!link || !preview || !modal || !modalContent || !closeBtn) return;
+
+  // Parse many human date formats like "12 Sept. 2025", "12 September 2025", "Sept 12, 2025", "2025-09-12"
+  function parseDateString(s) {
+    if (!s || typeof s !== 'string') return NaN;
+    let str = s.replace(/\u00A0/g,' ').trim();          // normalise nonbreaking spaces
+    str = str.replace(/\./g,'');                        // remove dots (e.g. "Sept.")
+    str = str.replace(/(st|nd|rd|th)\b/gi,'');          // remove ordinals
+    // Try ISO first
+    const iso = Date.parse(str);
+    if (!isNaN(iso)) return new Date(iso);
+
+    // Map month names -> numbers
+    const months = {
+      jan:0, january:0, feb:1, february:1, mar:2, march:2, apr:3, april:3,
+      may:4, jun:5, june:5, jul:6, july:6, aug:7, august:7, sep:8, sept:8, september:8,
+      oct:9, october:9, nov:10, november:10, dec:11, december:11
+    };
+
+    // Try patterns: "12 Sept 2025" or "Sept 12 2025"
+    const parts1 = str.match(/^(\\d{1,2})\\s+([A-Za-z]+)\\s+(\\d{4})$/);
+    if (parts1) {
+      const d = parseInt(parts1[1],10); const m = months[parts1[2].toLowerCase()];
+      const y = parseInt(parts1[3],10);
+      if (!isNaN(m)) return new Date(y, m, d);
+    }
+    const parts2 = str.match(/^([A-Za-z]+)\\s+(\\d{1,2}),?\\s*(\\d{4})$/);
+    if (parts2) {
+      const m = months[parts2[1].toLowerCase()]; const d = parseInt(parts2[2],10);
+      const y = parseInt(parts2[3],10);
+      if (!isNaN(m)) return new Date(y, m, d);
+    }
+    // Try "12/09/2025" or "12-09-2025" (dd-mm-yyyy or mm-dd-yyyy ambiguous — assume dd-mm-yyyy if day>12)
+    const parts3 = str.match(/^(\\d{1,2})[\\/\\-](\\d{1,2})[\\/\\-](\\d{2,4})$/);
+    if (parts3) {
+      let d = parseInt(parts3[1],10), m = parseInt(parts3[2],10)-1, y = parseInt(parts3[3],10);
+      if (y < 100) y += 2000;
+      // if first part > 12, treat as day-month-year; otherwise we assume dd-mm-yyyy
+      return new Date(y, m, d);
+    }
+    // Last resort: let Date try again
+    const fallback = new Date(str);
+    if (!isNaN(fallback.getTime())) return fallback;
+    return NaN;
+  }
+
+  function extractEntriesFromDoc(doc) {
+    const nodes = Array.from(doc.querySelectorAll('.upcoming-entry'));
+    return nodes.map(n => {
+      const dateNode = n.querySelector('.upcoming-date');
+      const dateText = dateNode ? dateNode.textContent.trim() : '';
+      const parsed = parseDateString(dateText);
+      return { node: n, dateText, dateObj: parsed };
+    });
+  }
+
+  // pick first future event (>= today 00:00 local)
+  function pickClosestFuture(entries) {
+    const today = new Date();
+    const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    const future = entries.filter(e => !isNaN(e.dateObj) && e.dateObj.getTime() >= todayStart.getTime());
+    if (!future.length) return null;
+    future.sort((a,b) => a.dateObj - b.dateObj);
+    return future[0];
+  }
+
+  // sort all entries chronologically (entries with invalid dates go to the end)
+  function sortEntriesChrono(entries) {
+    return entries.slice().sort((a,b) => {
+      const aT = isNaN(a.dateObj) ? Infinity : a.dateObj.getTime();
+      const bT = isNaN(b.dateObj) ? Infinity : b.dateObj.getTime();
+      return aT - bT;
+    });
+  }
+
+  async function fetchUpcomingDoc() {
+    if (cachedDoc) return cachedDoc;
+    try {
+      const res = await fetch(link.getAttribute('href'), {cache: 'no-store'});
+      if (!res.ok) throw new Error('Failed to fetch upcoming page');
+      const text = await res.text();
+      const parser = new DOMParser();
+      cachedDoc = parser.parseFromString(text, 'text/html');
+      return cachedDoc;
+    } catch (err) {
+      console.error(err);
+      throw err;
+    }
+  }
+
+  async function populatePreview() {
+    try {
+      const doc = await fetchUpcomingDoc();
+      const entries = extractEntriesFromDoc(doc);
+      if (!entries.length) {
+        preview.innerHTML = '<p style="opacity:.6">No upcoming entries yet.</p>';
+        return;
+      }
+
+      const next = pickClosestFuture(entries);
+      if (!next) {
+        // No future events: show fallback (icon + "I'll be in Oxford...")
+        preview.innerHTML = '<p><img src="images/icons8-home-96.png" alt="" class="smiley" style="width:1.6rem;vertical-align:middle;margin-right:.5rem;"> You\\'ll find me in Oxford for a little bit!</p>';
+        return;
+      }
+
+      // Show the next upcoming event as compact preview (clone to avoid moving nodes)
+      const clone = next.node.cloneNode(true);
+      clone.querySelectorAll('script').forEach(s => s.remove());
+      preview.innerHTML = '';
+      clone.classList.add('upcoming-preview-entry');
+      preview.appendChild(clone);
+
+    } catch (err) {
+      // network or parse error: fallback to the house icon + text
+      preview.innerHTML = '<p><img src="images/icons8-home-96.png" alt="" class="smiley" style="width:1.6rem;vertical-align:middle;margin-right:.5rem;"> You\\'ll find me in Oxford for a little bit!</p>';
+    }
+  }
+
+  async function showUpcomingModal(e) {
+    e && e.preventDefault && e.preventDefault();
+    modalContent.innerHTML = '<p style="opacity:.6">Loading…</p>';
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+
+    try {
+      const doc = await fetchUpcomingDoc();
+      const entries = extractEntriesFromDoc(doc);
+      if (!entries.length) {
+        modalContent.innerHTML = '<p style="opacity:.6">No upcoming entries yet.</p>';
+        return;
+      }
+
+      const sorted = sortEntriesChrono(entries);
+      // Build HTML fragment: use the original node markup but sorted
+      const frag = document.createElement('div');
+      sorted.forEach(e => {
+        const clone = e.node.cloneNode(true);
+        clone.querySelectorAll('script').forEach(s => s.remove());
+        frag.appendChild(clone);
+      });
+
+      modalContent.innerHTML = frag.innerHTML;
+
+      // open external links in new tabs
+      modalContent.querySelectorAll('a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (href && !href.startsWith('#') && !href.startsWith('javascript:')) {
+          a.setAttribute('target', '_blank');
+          a.setAttribute('rel', 'noopener noreferrer');
+        }
+      });
+
+    } catch (err) {
+      console.error(err);
+      modalContent.innerHTML = '<p style="color:var(--red)">Could not load upcoming content.</p>';
+    }
+  }
+
+  function closeModal() {
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+    link.focus();
+  }
+
+  // init
+  populatePreview();
+  link.addEventListener('click', showUpcomingModal);
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (ev) => { if (ev.target === modal) closeModal(); });
+  document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape' && modal.style.display === 'flex') closeModal(); });
+
+})();
+</script>
 <!-- Color Schemes Popup -->
 <div id="colorSchemesModal" class="modal-overlay" aria-hidden="true">
   <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">

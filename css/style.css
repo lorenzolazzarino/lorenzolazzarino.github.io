@@ -718,6 +718,48 @@ embed:focus {
   margin-bottom: 1.1em;
   line-height: 1.6;
 }
+
+/* Upcoming list styles: mirror popup / papers layout */
+.upcoming-entry {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 0.05rem solid var(--base0);
+}
+.upcoming-preview-entry {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.upcoming-date {
+  width: 6.5rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--base02);
+  flex-shrink: 0;
+}
+.upcoming-text {
+  flex: 1;
+  font-size: 1rem;
+  color: var(--base01);
+}
+/* make modal content display entries nicely */
+#upcomingModalContent .upcoming-entry {
+  border: none;
+  padding: 0.35rem 0;
+}
+/* small screens adjustments */
+@media (max-width: 768px) {
+  .upcoming-entry {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .upcoming-date {
+    width: auto;
+  }
+}
 @media (max-width: 768px) {
         body {
             font-size: 0.8rem;
