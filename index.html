@@ -295,7 +295,7 @@
     return entries.slice().sort((a,b) => {
       const aT = isNaN(a.dateObj) ? Infinity : a.dateObj.getTime();
       const bT = isNaN(b.dateObj) ? Infinity : b.dateObj.getTime();
-      return aT - bT;
+      return bT - aT;
     });
   }
 
