@@ -463,6 +463,14 @@
     margin-bottom: 1rem;
   }
 
+.div-line {
+    width: 95%; /* Adjust width as needed */
+    height: 0; /* Remove height */
+    border-top: 0.01rem var(--red); /* Use border-top with dashed style */
+    margin: 0 auto; /* Center the line */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 /* BACKGROUND PAGE STYLE */ 
 
 
