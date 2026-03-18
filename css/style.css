@@ -457,7 +457,7 @@
 .central-line {
     width: 70%; /* Adjust width as needed */
     height: 0; /* Remove height */
-    border-top: 0.01rem dashed var(--red); /* Use border-top with dashed style */
+    border-top: 0.01rem var(--red); /* Use border-top with dashed style */
     margin: 0 auto; /* Center the line */
     margin-top: 1rem;
     margin-bottom: 1rem;
