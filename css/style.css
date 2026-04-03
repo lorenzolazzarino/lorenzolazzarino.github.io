@@ -777,6 +777,7 @@ embed:focus {
   margin: 0;
   line-height: 1.05;
 }
+
 /* small screens adjustments */
 @media (max-width: 768px) {
   .upcoming-entry {
