@@ -1,682 +1,694 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Lorenzo Lazzarino - Homepage</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap">
-    <link rel="shortcut icon" href="images/user-3.ico" type="image/x-icon"/>
-    
-    <!-- Theme style  -->
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Lorenzo Lazzarino - Homepage</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap">
+  <link rel="shortcut icon" href="images/user-3.ico" type="image/x-icon" />
+
+  <!-- Theme style  -->
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <div id="header"></div>
+  <!-- HEADER -->
+  <div id="header"></div>
 
-    <script>
-        fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header').innerHTML = data;
-        })
-        .catch(error => {
-            document.getElementById('header').innerHTML = "<p>Failed to load header</p>";
-            console.error("Error loading header:", error);
-        });
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      })
+      .catch(error => {
+        document.getElementById('header').innerHTML = "<p>Failed to load header</p>";
+        console.error("Error loading header:", error);
+      });
 
-    </script>
+  </script>
 
 
 
-    <main>
+  <main>
 
-        <div class="megacontainer">
-            
-                <div class="about-me">
-                    <div>
-                        <h2><span class="underline drop-cap">Hi!</span></h2>
-                        <p> I am a 3rd year PhD student in Numerical Mathematics advised by <a href="https://people.maths.ox.ac.uk/nakatsukasa/" target="_blank">Yuji Nakatsukasa</a> and 
-                            <a href="https://www.numerical.rl.ac.uk/people/hussam-al-daas/" target="_blank">Hussam Al Daas</a>.
-                        </p><br>
-                        
-                        <p>
-                            I like to think about (Randomized) Numerical (Multi)Linear Algebra, especially:
-                            <ul>
-                                <li> Randomized low-rank approximations</li>
-                                <li> Krylov subspace methods</li>
-                                <li> Matrix perturbation theory</li>
-                            </ul>
-                        </p> 
-                            <br>
-                        <div class="icon-container">
-                            <a href="https://scholar.google.com/citations?user=gPxBjy8AAAAJ&hl=fr&oi=ao"   target="_blank">
-                                <img src="images/icons8-google-scholar-96.png" alt="GoogleScholar">
-                            </a>
-                            <a class="icon-arxiv" href="https://arxiv.org/search/math?searchtype=author&query=Lazzarino,+L"   target="_blank">
-                                <img src="images/arxiv-base2.png" alt="Arxiv">       
-                            </a>
-                                <a href="https://github.com/lorenzolazzarino"   target="_blank">
-                                <img src="images/icons8-github-96.png" alt="GitHub">
-                            </a>
-                            <a href="https://www.linkedin.com/in/lorenzolazzarino/"   target="_blank">
-                                <img src="images/icons8-linkedin-96.png" alt="Linkedin">
-                            </a>
-                        </div>
-                        
-                    </div>
-                </div>
-                
-                <div class="publications">
-                    <h3><a href="publications.html" id="publicationsLink" class="popup-link">Papers</a></h3>
-                    <div id="latestPublications">
-                        <p style="opacity:.6">Loading…</p>
-                    </div>
-                </div>
+    <div class="megacontainer">
 
-                
-                <div class="talks">
-                    <h3><a href="talks.html">Talks</a></h3>
+      <div class="about-me">
+        <div>
+          <h2><span class="underline drop-cap">Hi!</span></h2>
+          <p> I am a 3rd year PhD student in Numerical Mathematics advised by <a
+              href="https://people.maths.ox.ac.uk/nakatsukasa/" target="_blank">Yuji Nakatsukasa</a> and
+            <a href="https://www.numerical.rl.ac.uk/people/hussam-al-daas/" target="_blank">Hussam Al Daas</a>.
+          </p><br>
 
-                        <div class="talk-entry">
-                            <span class="talk-title"><a href="talks/2026/seminar-groningen/flyer.png" target="_blank">Error estimation for randomized low-rank approximations</a></span><br>
-                            <span class="talk-event">COMPMATH Seminar</span><br>
-                            <span class="talk-details">16 April 2026, University of Groningen</span>
+          <p>
+            I like to think about (Randomized) Numerical (Multi)Linear Algebra, especially:
+          <ul>
+            <li> Randomized low-rank approximations</li>
+            <li> Krylov subspace methods</li>
+            <li> Matrix perturbation theory</li>
+          </ul>
+          </p>
+          <br>
+          <div class="icon-container">
+            <a href="https://scholar.google.com/citations?user=gPxBjy8AAAAJ&hl=fr&oi=ao" target="_blank">
+              <img src="images/icons8-google-scholar-96.png" alt="GoogleScholar">
+            </a>
+            <a class="icon-arxiv" href="https://arxiv.org/search/math?searchtype=author&query=Lazzarino,+L"
+              target="_blank">
+              <img src="images/arxiv-base2.png" alt="Arxiv">
+            </a>
+            <a href="https://github.com/lorenzolazzarino" target="_blank">
+              <img src="images/icons8-github-96.png" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/lorenzolazzarino/" target="_blank">
+              <img src="images/icons8-linkedin-96.png" alt="Linkedin">
+            </a>
+          </div>
 
-                        </div>
-                         <div class="talk-entry">
-                            <span class="talk-title"><a href="https://stemforbritain.org.uk/finalists-2026/"  target="_blank">Reducing acquisition time and radiation damage through data-driven experimental design in spectro-microscopy</a></span><br>
-                            <span class="talk-event">STEM for BRITAIN</span><br>
-                            <span class="talk-details">17 March 2026, House of Commons, UK Parliament</span> 
-                        </div>      
-                </div>
+        </div>
+      </div>
 
-                <div class="teaching">
-			<h3> <a href="teaching.html" id="teachingLink" class="popup-link">Teaching</a> </h3>
-                    <div class="teaching-entry">
-                        <span class="teaching-role">Tutor - MMSC</span> <br>
-                        <span class="teaching-class"><a href="https://courses.maths.ox.ac.uk/course/view.php?id=5024" target="_blank">Numerical Linear Algebra</a></span><br>
-                        <span class="teaching-lecturer">Lecturer: Y.Nakatsukasa</span><br><br>
+      <div class="publications">
+        <h3><a href="publications.html" id="publicationsLink" class="popup-link">Papers</a></h3>
+        <div id="latestPublications">
+          <p style="opacity:.6">Loading…</p>
+        </div>
+      </div>
 
-                        <!-- 
+
+      <div class="talks">
+        <h3><a href="talks.html">Talks</a></h3>
+
+        <div class="talk-entry">
+          <span class="talk-title">Error estimation for randomized low-rank approximations</span><br>
+          <span class="talk-event">PhD Showcase</span><br>
+          <span class="talk-details">11 May 2026, RAL Campus</span>
+        </div>
+
+        <div class="talk-entry">
+          <span class="talk-title"><a href="talks/2026/seminar-groningen/flyer.png" target="_blank">Error estimation for
+              randomized low-rank approximations</a></span><br>
+          <span class="talk-event">COMPMATH Seminar</span><br>
+          <span class="talk-details">16 April 2026, University of Groningen</span>
+
+        </div>
+      </div>
+
+      <div class="teaching">
+        <h3> <a href="teaching.html" id="teachingLink" class="popup-link">Teaching</a> </h3>
+        <div class="teaching-entry">
+          <span class="teaching-role">Tutor - MMSC</span> <br>
+          <span class="teaching-class"><a href="https://courses.maths.ox.ac.uk/course/view.php?id=5024"
+              target="_blank">Numerical Linear Algebra</a></span><br>
+          <span class="teaching-lecturer">Lecturer: Y.Nakatsukasa</span><br><br>
+
+          <!-- 
                             <span class="teaching-role">Tutor -</span>
                             <span class="teaching-class"><a href="https://courses.maths.ox.ac.uk/course/view.php?id=5058" target="_blank">Continuous Optimization</a></span>
                             <span class="teaching-lecturer">Lecturer: C.Cartis</span>
                         -->
-                    </div>
-                    <div class="teaching-entry">
-                        <span class="teaching-role">Mentor</span> <br>
-                        <span class="teaching-class"><a href="https://www.maths.ox.ac.uk/members/students/postgraduate-courses/doctor-philosophy/skills-training/broadening-training/suggest-topic-directed-reading-programme-undergraduates" target="_blank">Directed Reading Programme</a></span><br>
-                        <span class="teaching-lecturer">Based on: (Pearce, Martinsson, 2025)</span>
-
-                    </div>
-                </div>
-                <div class="horizontal-line"></div>
-            
-                <div class="background">
-                    <h3><a href="background.html">Education </a></h3>
-                    <div class="education-entry">
-                            <span class="education-institution">University of Oxford,</span>
-                            <span class="education-city">Oxford, UK,</span>
-                            <span class="education-degree">Dphil in Mathematics</span>
-                            <span class="education-years">2023 - 2027</span>
-                        
-                    </div>
-                    
-                    <div class="education-entry">
-                        
-                            <span class="education-institution">Charles University,</span>
-                            <span class="education-city">Prague, Czechia,</span>
-                            <span class="education-degree">MSc in Computational Mathematics</span>
-                            <span class="education-years">2021 - 2023</span>
-                    
-                    </div>
-                    <!-- A sub-item (indented) -->
-                    <div class="education-entry sub-item">
-                            <span class="education-institution">Sorbonne University,</span>
-                            <span class="education-city">Paris, France,</span>
-                            <span class="education-degree">4EU+ Program</span> <!-- Empty for no extra info -->
-                            <span class="education-years"></span>
-                    
-                    </div>
-                    
-                    <div class="education-entry">
-                        
-                            <span class="education-institution">Università Milano-Bicocca,</span>
-                            <span class="education-city">Milan, Italy,</span>
-                            <span class="education-degree">BSc in Mathematics</span>
-                            <span class="education-years">2017 - 2021</span>
-                        
-                    </div>
-                    <!-- A sub-item (indented) -->
-                    <div class="education-entry sub-item">
-                        
-                            <span class="education-institution">TU Kaiserslautern,</span>
-                            <span class="education-city">Kaiserslautern, Germany,</span>
-                            <span class="education-degree">Erasmus+</span> <!-- Empty for no extra info -->
-                            <span class="education-years"></span>
-                        
-                    </div>
-                    <h3><a href="background.html">Awards</a></h3>
-                    <div class="education-entry">
-                        
-                            <span class="education-institution">STEM for BRITAIN,</span>
-                            <span class="education-city">House of Commons, UK Parliament,</span>
-                            <span class="education-degree">Finalist</span>
-                            <span class="education-years">2026</span>
-                        
-                    </div>
-                </div>
-
-                <div class="upcoming">
-                <h3>
-                  <!-- keep href for progressive enhancement, but also prevent default as defensive fallback -->
-                  <a href="upcoming.html" id="upcomingLink" class="popup-link" role="button" onclick="event.preventDefault()">Upcoming</a>
-                </h3>
-                  <div id="upcomingPreview">
-                    <p style="opacity:.6">Loading…</p>
-                  </div>
-                </div>
-
-                <div class="extra">
-                    <h3>Plus,</h3>
-                    <ul class="extra-list">
-                        <li>I love traveling</li>
-                        <!-- <li>I take <a href="plus-tf.html">Table Football</a> way too seriously</li> -->
-                        <li>I take Table Football way too seriously</li>
-			<li> I spend too many hours choosing a <span id="colorSchemesTrigger" class="popup-trigger">color scheme</span> for any software I use </li>
-                        <li>I coach the <a href="bball.html">Woman's first basketball team</a> of Oxford University</ul>
-                </div>
+        </div>
+        <div class="teaching-entry">
+          <span class="teaching-role">Mentor</span> <br>
+          <span class="teaching-class"><a
+              href="https://www.maths.ox.ac.uk/members/students/postgraduate-courses/doctor-philosophy/skills-training/broadening-training/suggest-topic-directed-reading-programme-undergraduates"
+              target="_blank">Directed Reading Programme</a></span><br>
+          <span class="teaching-lecturer">Based on: (Pearce, Martinsson, 2025)</span>
 
         </div>
-    </main>
+      </div>
+      <div class="horizontal-line"></div>
 
-<!-- 100% privacy-first analytics -->
-<script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+      <div class="background">
+        <h3><a href="background.html">Education </a></h3>
+        <div class="education-entry">
+          <span class="education-institution">University of Oxford,</span>
+          <span class="education-city">Oxford, UK,</span>
+          <span class="education-degree">Dphil in Mathematics</span>
+          <span class="education-years">2023 - 2027</span>
 
-<div id="footer"></div>
+        </div>
 
-<script>
-  fetch('footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer').innerHTML = data;
-    })
-    .catch(error => {
-      document.getElementById('footer').innerHTML = "<p>Failed to load footer</p>";
-      console.error("Error loading footer:", error);
-    });
-</script>
+        <div class="education-entry">
 
-<!-- Upcoming modal (shared style with other modals) -->
-<div id="upcomingModal" class="modal-overlay" aria-hidden="true">
-  <div class="modal-box modal-box-wide" role="dialog" aria-modal="true">
-    <button id="upcomingModalClose" class="modal-close-x" aria-label="Close upcoming panel">✕</button>
-    <div id="upcomingModalContent" class="modal-content">
-      <p style="opacity:.6">Loading…</p>
+          <span class="education-institution">Charles University,</span>
+          <span class="education-city">Prague, Czechia,</span>
+          <span class="education-degree">MSc in Computational Mathematics</span>
+          <span class="education-years">2021 - 2023</span>
+
+        </div>
+        <!-- A sub-item (indented) -->
+        <div class="education-entry sub-item">
+          <span class="education-institution">Sorbonne University,</span>
+          <span class="education-city">Paris, France,</span>
+          <span class="education-degree">4EU+ Program</span> <!-- Empty for no extra info -->
+          <span class="education-years"></span>
+
+        </div>
+
+        <div class="education-entry">
+
+          <span class="education-institution">Università Milano-Bicocca,</span>
+          <span class="education-city">Milan, Italy,</span>
+          <span class="education-degree">BSc in Mathematics</span>
+          <span class="education-years">2017 - 2021</span>
+
+        </div>
+        <!-- A sub-item (indented) -->
+        <div class="education-entry sub-item">
+
+          <span class="education-institution">TU Kaiserslautern,</span>
+          <span class="education-city">Kaiserslautern, Germany,</span>
+          <span class="education-degree">Erasmus+</span> <!-- Empty for no extra info -->
+          <span class="education-years"></span>
+
+        </div>
+        <h3><a href="background.html">Awards</a></h3>
+        <div class="education-entry">
+
+          <span class="education-institution">STEM for BRITAIN,</span>
+          <span class="education-city">House of Commons, UK Parliament,</span>
+          <span class="education-degree">Finalist</span>
+          <span class="education-years">2026</span>
+
+        </div>
+      </div>
+
+      <div class="upcoming">
+        <h3>
+          <!-- keep href for progressive enhancement, but also prevent default as defensive fallback -->
+          <a href="upcoming.html" id="upcomingLink" class="popup-link" role="button"
+            onclick="event.preventDefault()">Upcoming</a>
+        </h3>
+        <div id="upcomingPreview">
+          <p style="opacity:.6">Loading…</p>
+        </div>
+      </div>
+
+      <div class="extra">
+        <h3>Plus,</h3>
+        <ul class="extra-list">
+          <li>I love traveling</li>
+          <!-- <li>I take <a href="plus-tf.html">Table Football</a> way too seriously</li> -->
+          <li>I take Table Football way too seriously</li>
+          <li> I spend too many hours choosing a <span id="colorSchemesTrigger" class="popup-trigger">color
+              scheme</span> for any software I use </li>
+          <li>I coach the <a href="bball.html">Woman's first basketball team</a> of Oxford University
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- 100% privacy-first analytics -->
+  <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
+  <div id="footer"></div>
+
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      })
+      .catch(error => {
+        document.getElementById('footer').innerHTML = "<p>Failed to load footer</p>";
+        console.error("Error loading footer:", error);
+      });
+  </script>
+
+  <!-- Upcoming modal (shared style with other modals) -->
+  <div id="upcomingModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box modal-box-wide" role="dialog" aria-modal="true">
+      <button id="upcomingModalClose" class="modal-close-x" aria-label="Close upcoming panel">✕</button>
+      <div id="upcomingModalContent" class="modal-content">
+        <p style="opacity:.6">Loading…</p>
+      </div>
     </div>
   </div>
-</div>
 
 
-<script>
-(function(){
-  const link = document.getElementById('upcomingLink');
-  const preview = document.getElementById('upcomingPreview');
-  const modal = document.getElementById('upcomingModal');
-  const modalContent = document.getElementById('upcomingModalContent');
-  const closeBtn = document.getElementById('upcomingModalClose');
-  let cachedDoc = null;
+  <script>
+    (function () {
+      const link = document.getElementById('upcomingLink');
+      const preview = document.getElementById('upcomingPreview');
+      const modal = document.getElementById('upcomingModal');
+      const modalContent = document.getElementById('upcomingModalContent');
+      const closeBtn = document.getElementById('upcomingModalClose');
+      let cachedDoc = null;
 
-  if (!link || !preview || !modal || !modalContent || !closeBtn) return;
+      if (!link || !preview || !modal || !modalContent || !closeBtn) return;
 
-  // Parse many human date formats like "12 Sept. 2025", "12 September 2025", "Sept 12, 2025", "2025-09-12"
-  function parseDateString(s) {
-    if (!s || typeof s !== 'string') return NaN;
-    let str = s.replace(/\u00A0/g,' ').trim();          // normalise nonbreaking spaces
-    str = str.replace(/\./g,'');                        // remove dots (e.g. "Sept.")
-    str = str.replace(/(st|nd|rd|th)\b/gi,'');          // remove ordinals
-    // Try ISO first
-    const iso = Date.parse(str);
-    if (!isNaN(iso)) return new Date(iso);
+      // Parse many human date formats like "12 Sept. 2025", "12 September 2025", "Sept 12, 2025", "2025-09-12"
+      function parseDateString(s) {
+        if (!s || typeof s !== 'string') return NaN;
+        let str = s.replace(/\u00A0/g, ' ').trim();          // normalise nonbreaking spaces
+        str = str.replace(/\./g, '');                        // remove dots (e.g. "Sept.")
+        str = str.replace(/(st|nd|rd|th)\b/gi, '');          // remove ordinals
+        // Try ISO first
+        const iso = Date.parse(str);
+        if (!isNaN(iso)) return new Date(iso);
 
-    // Map month names -> numbers
-    const months = {
-      jan:0, january:0, feb:1, february:1, mar:2, march:2, apr:3, april:3,
-      may:4, jun:5, june:5, jul:6, july:6, aug:7, august:7, sep:8, sept:8, september:8,
-      oct:9, october:9, nov:10, november:10, dec:11, december:11
-    };
+        // Map month names -> numbers
+        const months = {
+          jan: 0, january: 0, feb: 1, february: 1, mar: 2, march: 2, apr: 3, april: 3,
+          may: 4, jun: 5, june: 5, jul: 6, july: 6, aug: 7, august: 7, sep: 8, sept: 8, september: 8,
+          oct: 9, october: 9, nov: 10, november: 10, dec: 11, december: 11
+        };
 
-    // Try patterns: "12 Sept 2025" or "Sept 12 2025"
-    const parts1 = str.match(/^(\\d{1,2})\\s+([A-Za-z]+)\\s+(\\d{4})$/);
-    if (parts1) {
-      const d = parseInt(parts1[1],10); const m = months[parts1[2].toLowerCase()];
-      const y = parseInt(parts1[3],10);
-      if (!isNaN(m)) return new Date(y, m, d);
-    }
-    const parts2 = str.match(/^([A-Za-z]+)\\s+(\\d{1,2}),?\\s*(\\d{4})$/);
-    if (parts2) {
-      const m = months[parts2[1].toLowerCase()]; const d = parseInt(parts2[2],10);
-      const y = parseInt(parts2[3],10);
-      if (!isNaN(m)) return new Date(y, m, d);
-    }
-    // Try "12/09/2025" or "12-09-2025" (dd-mm-yyyy or mm-dd-yyyy ambiguous — assume dd-mm-yyyy if day>12)
-    const parts3 = str.match(/^(\\d{1,2})[\\/\\-](\\d{1,2})[\\/\\-](\\d{2,4})$/);
-    if (parts3) {
-      let d = parseInt(parts3[1],10), m = parseInt(parts3[2],10)-1, y = parseInt(parts3[3],10);
-      if (y < 100) y += 2000;
-      // if first part > 12, treat as day-month-year; otherwise we assume dd-mm-yyyy
-      return new Date(y, m, d);
-    }
-    // Last resort: let Date try again
-    const fallback = new Date(str);
-    if (!isNaN(fallback.getTime())) return fallback;
-    return NaN;
-  }
-
-  function extractEntriesFromDoc(doc) {
-    const nodes = Array.from(doc.querySelectorAll('.upcoming-entry'));
-    return nodes.map(n => {
-      const dateNode = n.querySelector('.upcoming-date');
-      const dateText = dateNode ? dateNode.textContent.trim() : '';
-      const parsed = parseDateString(dateText);
-      return { node: n, dateText, dateObj: parsed };
-    });
-  }
-
-  // pick first future event (>= today 00:00 local)
-  function pickClosestFuture(entries) {
-    const today = new Date();
-    const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-    const future = entries.filter(e => !isNaN(e.dateObj) && e.dateObj.getTime() >= todayStart.getTime());
-    if (!future.length) return null;
-    future.sort((a,b) => a.dateObj - b.dateObj);
-    return future[0];
-  }
-
-  // sort all entries chronologically (entries with invalid dates go to the end)
-  function sortEntriesChrono(entries) {
-    return entries.slice().sort((a,b) => {
-      const aT = isNaN(a.dateObj) ? Infinity : a.dateObj.getTime();
-      const bT = isNaN(b.dateObj) ? Infinity : b.dateObj.getTime();
-      return bT - aT;
-    });
-  }
-
-  async function fetchUpcomingDoc() {
-    if (cachedDoc) return cachedDoc;
-    try {
-      const res = await fetch(link.getAttribute('href'), {cache: 'no-store'});
-      if (!res.ok) throw new Error('Failed to fetch upcoming page');
-      const text = await res.text();
-      const parser = new DOMParser();
-      cachedDoc = parser.parseFromString(text, 'text/html');
-      return cachedDoc;
-    } catch (err) {
-      console.error(err);
-      throw err;
-    }
-  }
-
-  async function populatePreview() {
-    try {
-      const doc = await fetchUpcomingDoc();
-      const entries = extractEntriesFromDoc(doc);
-      if (!entries.length) {
-        preview.innerHTML = '<p style="opacity:.6">No upcoming entries yet.</p>';
-        return;
-      }
-
-      const next = pickClosestFuture(entries);
-      if (!next) {
-        // No future events: show fallback (icon + "I'll be in Oxford...")
-        preview.innerHTML = '<p><img src="images/icons8-home-96.png" alt="" class="smiley" style="width:1.6rem;vertical-align:middle;margin-right:.5rem;"> You\'ll find me in Oxford for a little bit!</p>';
-        return;
-      }
-
-      // Show the next upcoming event as compact preview (clone to avoid moving nodes)
-      const clone = next.node.cloneNode(true);
-      clone.querySelectorAll('script').forEach(s => s.remove());
-      preview.innerHTML = '';
-      clone.classList.add('upcoming-preview-entry');
-      preview.appendChild(clone);
-
-    } catch (err) {
-      // network or parse error: fallback to the house icon + text
-      preview.innerHTML = '<p><img src="images/icons8-home-96.png" alt="" class="smiley" style="width:1.6rem;vertical-align:middle;margin-right:.5rem;"> You\'ll find me in Oxford for a little bit!</p>';
-    }
-  }
-
-  async function showUpcomingModal(e) {
-    e && e.preventDefault && e.preventDefault();
-    modalContent.innerHTML = '<p style="opacity:.6">Loading…</p>';
-    modal.style.display = 'flex';
-    modal.setAttribute('aria-hidden','false');
-    document.body.style.overflow = 'hidden';
-    closeBtn.focus();
-
-    try {
-      const doc = await fetchUpcomingDoc();
-      const entries = extractEntriesFromDoc(doc);
-      if (!entries.length) {
-        modalContent.innerHTML = '<p style="opacity:.6">No upcoming entries yet.</p>';
-        return;
-      }
-
-      const sorted = sortEntriesChrono(entries);
-      // Build HTML fragment: use the original node markup but sorted
-      const frag = document.createElement('div');
-      sorted.forEach(e => {
-        const clone = e.node.cloneNode(true);
-        clone.querySelectorAll('script').forEach(s => s.remove());
-        frag.appendChild(clone);
-      });
-
-      modalContent.innerHTML = frag.innerHTML;
-
-      // open external links in new tabs
-      modalContent.querySelectorAll('a').forEach(a => {
-        const href = a.getAttribute('href');
-        if (href && !href.startsWith('#') && !href.startsWith('javascript:')) {
-          a.setAttribute('target', '_blank');
-          a.setAttribute('rel', 'noopener noreferrer');
+        // Try patterns: "12 Sept 2025" or "Sept 12 2025"
+        const parts1 = str.match(/^(\\d{1,2})\\s+([A-Za-z]+)\\s+(\\d{4})$/);
+        if (parts1) {
+          const d = parseInt(parts1[1], 10); const m = months[parts1[2].toLowerCase()];
+          const y = parseInt(parts1[3], 10);
+          if (!isNaN(m)) return new Date(y, m, d);
         }
-      });
-
-    } catch (err) {
-      console.error(err);
-      modalContent.innerHTML = '<p style="color:var(--red)">Could not load upcoming content.</p>';
-    }
-  }
-
-  function closeModal() {
-    modal.style.display = 'none';
-    modal.setAttribute('aria-hidden','true');
-    document.body.style.overflow = '';
-    link.focus();
-  }
-
-  // init
-  populatePreview();
-  link.addEventListener('click', showUpcomingModal);
-  closeBtn.addEventListener('click', closeModal);
-  modal.addEventListener('click', (ev) => { if (ev.target === modal) closeModal(); });
-  document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape' && modal.style.display === 'flex') closeModal(); });
-
-})();
-</script>
-<!-- Color Schemes Popup -->
-<div id="colorSchemesModal" class="modal-overlay" aria-hidden="true">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <button id="closeModalX" class="modal-close-x" aria-label="Close">✕</button>
-
-            <div class="title-page">
-                <h1>My color schemes philosophy</h1>
-            </div>
-    <p>
-                <ul class="extra-list">
-			<li>Spend more time customizing the software than actually using it</li>
-			<li>Spend hours creating a new color palette from scratch, only to realize professionals do it better</li>
-			<li>Dark mode is non-negotiable (see contradiction below)</li>
-			<li>Every single part of your laptop must look the same (see contradiction below)</li>
-			<li>Your palette should look geeky, retro, dark, and vaguely original (spoiler: it won’t)</li>
-			<li>Choose <a href="https://github.com/morhetz/gruvbox" target="_blank">Gruvbox</a> for everything</li>
-			<li> Contradiction 1: Use light colors for your website (of course, <a href="https://ethanschoonover.com/solarized/" target="_blank">Solarized</a> is the right choice) </li>
-			<li> Contradiction 2: For notes, use Obsidian with the <a href="https://github.com/sr-campelo/retronotes" target="_blank">RetroNotes</a> template </li>
-			<li>Eventually, try actually using the softwares</li>
-                </div>
-</p>
-  </div>
-</div>
-
-<!-- Teaching modal (shared style with other modals) -->
-<div id="teachingModal" class="modal-overlay" aria-hidden="true">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="teachingModalTitle">
-    <button id="teachingModalClose" class="modal-close-x" aria-label="Close teaching panel">✕</button>
-    <div id="teachingModalContent" class="modal-content">
-      <!-- remote content will be injected here -->
-      <p style="opacity:.6">Loading…</p>
-    </div>
-  </div>
-</div>
-
-
-<!-- Publications modal -->
-<div id="publicationsModal" class="modal-overlay" aria-hidden="true">
-  <div class="modal-box modal-box-wide" role="dialog" aria-modal="true" aria-labelledby="publicationsModalTitle">
-    <button id="publicationsModalClose" class="modal-close-x" aria-label="Close publications panel">✕</button>
-    <div id="publicationsModalContent" class="modal-content">
-      <p style="opacity:.6">Loading…</p>
-    </div>
-  </div>
-</div>
-
-<!-- For color palette pop-up -->
-<script>
-  (function() {
-    const trigger = document.getElementById('colorSchemesTrigger');
-    const modal = document.getElementById('colorSchemesModal');
-    const closeX = document.getElementById('closeModalX');
-
-    if (!trigger || !modal || !closeX) return;
-
-    function openModal() {
-      modal.style.display = 'flex';
-      modal.setAttribute('aria-hidden', 'false');
-      // focus the close button for keyboard users
-      closeX.focus();
-      document.body.style.overflow = 'hidden'; // prevent background scroll
-    }
-    function closeModal() {
-      modal.style.display = 'none';
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = ''; // restore scroll
-      trigger.focus();
-    }
-
-    trigger.addEventListener('click', openModal);
-    closeX.addEventListener('click', closeModal);
-
-    // close when clicking outside the modal box
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
-
-    // ESC closes modal
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
-    });
-  })();
-</script>
-
-        <!-- Publications automatic add -->
-<script>
-(function(){
-  const link = document.getElementById('publicationsLink');
-  const latestBox = document.getElementById('latestPublications');
-
-  const modal = document.getElementById('publicationsModal');
-  const modalContent = document.getElementById('publicationsModalContent');
-  const closeBtn = document.getElementById('publicationsModalClose');
-
-  let cachedDoc = null;
-
-  if (!link || !latestBox || !modal || !modalContent || !closeBtn) return;
-
-  async function fetchPublicationsDoc() {
-    if (cachedDoc) return cachedDoc;
-
-    const res = await fetch(link.getAttribute('href'), {cache: 'no-store'});
-    if (!res.ok) throw new Error('Failed to fetch publications page');
-
-    const text = await res.text();
-    const parser = new DOMParser();
-    cachedDoc = parser.parseFromString(text, 'text/html');
-    return cachedDoc;
-  }
-
-  function extractBibEntries(doc) {
-    // Grab .bib-entry from the publications page
-    return Array.from(doc.querySelectorAll('.bib-entry'));
-  }
-
-  async function populateLatestTwo() {
-    try {
-      const doc = await fetchPublicationsDoc();
-      const entries = extractBibEntries(doc);
-
-      // Take first two (so keep publications.html newest-first)
-      const topTwo = entries.slice(0, 2).map(e => e.outerHTML).join('');
-      latestBox.innerHTML = topTwo || '<p style="opacity:.6">No publications yet.</p>';
-    } catch (err) {
-      console.error(err);
-      latestBox.innerHTML = '<p style="color:var(--red)">Could not load publications.</p>';
-    }
-  }
-
-  async function openModal() {
-    modal.style.display = 'flex';
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    closeBtn.focus();
-  }
-
-  async function showPublicationsModal(e) {
-    e.preventDefault();
-    modalContent.innerHTML = '<p style="opacity:.6">Loading…</p>';
-    await openModal();
-
-    try {
-      const doc = await fetchPublicationsDoc();
-      const container =
-        doc.querySelector('#publicationsContent') ||
-        doc.querySelector('main');
-        doc.body;
-
-      const clone = container.cloneNode(true);
-      clone.querySelectorAll('script').forEach(s => s.remove());
-
-      modalContent.innerHTML = clone.innerHTML;
-
-      // Make links open in new tab
-      modalContent.querySelectorAll('a').forEach(a => {
-        const href = a.getAttribute('href');
-        if (href && !href.startsWith('#') && !href.startsWith('javascript:')) {
-          a.setAttribute('target', '_blank');
-          a.setAttribute('rel', 'noopener noreferrer');
+        const parts2 = str.match(/^([A-Za-z]+)\\s+(\\d{1,2}),?\\s*(\\d{4})$/);
+        if (parts2) {
+          const m = months[parts2[1].toLowerCase()]; const d = parseInt(parts2[2], 10);
+          const y = parseInt(parts2[3], 10);
+          if (!isNaN(m)) return new Date(y, m, d);
         }
-      });
-    } catch (err) {
-      console.error(err);
-      modalContent.innerHTML =
-        `<p style="color:var(--red)">Could not load publications content.</p><p>${err.message}</p>`;
-    }
-  }
-
-  function closeModal() {
-    modal.style.display = 'none';
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    link.focus();
-  }
-
-  // 1) Fill homepage with latest two on load
-  populateLatestTwo();
-
-  // 2) Open popup on click
-  link.addEventListener('click', showPublicationsModal);
-  closeBtn.addEventListener('click', closeModal);
-  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
-  });
-})();
-</script>
-<!-- For teaching pop-up -->
-<script>
-(function(){
-  const link = document.getElementById('teachingLink');
-  const modal = document.getElementById('teachingModal');
-  const modalContent = document.getElementById('teachingModalContent');
-  const closeBtn = document.getElementById('teachingModalClose');
-  let cachedHTML = null;
-
-  if (!link || !modal || !modalContent || !closeBtn) return;
-
-  async function loadTeaching() {
-    if (cachedHTML) return cachedHTML;
-    try {
-      const res = await fetch(link.getAttribute('href'), {cache: 'no-store'});
-      if (!res.ok) throw new Error('Failed to fetch teaching page');
-      const text = await res.text();
-
-      // parse and extract only the main teaching container
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(text, 'text/html');
-      const container = doc.querySelector('.teaching-megacontainer') || doc.querySelector('main') || doc.body;
-
-      // sanitize minimally: remove header/footer inside the fragment if present
-      const clone = container.cloneNode(true);
-
-      // remove any <script> tags in the fetched fragment (we don't want them executed)
-      clone.querySelectorAll('script').forEach(s => s.remove());
-
-      cachedHTML = clone.innerHTML;
-      return cachedHTML;
-    } catch (err) {
-      console.error(err);
-      return `<p style="color:var(--red)">Could not load teaching content.</p><p>${err.message}</p>`;
-    }
-  }
-
-  async function openModal() {
-    modal.style.display = 'flex';
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    closeBtn.focus();
-  }
-
-  async function showTeachingModal(e) {
-    e.preventDefault();
-    // show a loading placeholder
-    modalContent.innerHTML = '<p style="opacity:.6">Loading…</p>';
-    await openModal();
-    const html = await loadTeaching();
-    modalContent.innerHTML = html;
-
-    // optional: re-scope links that would navigate away — open them in new tab
-    modalContent.querySelectorAll('a').forEach(a => {
-      const href = a.getAttribute('href');
-      if (href && !href.startsWith('#') && !href.startsWith('javascript:')) {
-        a.setAttribute('target', '_blank');
-        a.setAttribute('rel', 'noopener noreferrer');
+        // Try "12/09/2025" or "12-09-2025" (dd-mm-yyyy or mm-dd-yyyy ambiguous — assume dd-mm-yyyy if day>12)
+        const parts3 = str.match(/^(\\d{1,2})[\\/\\-](\\d{1,2})[\\/\\-](\\d{2,4})$/);
+        if (parts3) {
+          let d = parseInt(parts3[1], 10), m = parseInt(parts3[2], 10) - 1, y = parseInt(parts3[3], 10);
+          if (y < 100) y += 2000;
+          // if first part > 12, treat as day-month-year; otherwise we assume dd-mm-yyyy
+          return new Date(y, m, d);
+        }
+        // Last resort: let Date try again
+        const fallback = new Date(str);
+        if (!isNaN(fallback.getTime())) return fallback;
+        return NaN;
       }
-    });
-  }
 
-  function closeModal() {
-    modal.style.display = 'none';
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    link.focus();
-  }
+      function extractEntriesFromDoc(doc) {
+        const nodes = Array.from(doc.querySelectorAll('.upcoming-entry'));
+        return nodes.map(n => {
+          const dateNode = n.querySelector('.upcoming-date');
+          const dateText = dateNode ? dateNode.textContent.trim() : '';
+          const parsed = parseDateString(dateText);
+          return { node: n, dateText, dateObj: parsed };
+        });
+      }
 
-  // event listeners
-  link.addEventListener('click', showTeachingModal);
-  closeBtn.addEventListener('click', closeModal);
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
-  });
-})();
-</script>
+      // pick first future event (>= today 00:00 local)
+      function pickClosestFuture(entries) {
+        const today = new Date();
+        const todayStart = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+        const future = entries.filter(e => !isNaN(e.dateObj) && e.dateObj.getTime() >= todayStart.getTime());
+        if (!future.length) return null;
+        future.sort((a, b) => a.dateObj - b.dateObj);
+        return future[0];
+      }
+
+      // sort all entries chronologically (entries with invalid dates go to the end)
+      function sortEntriesChrono(entries) {
+        return entries.slice().sort((a, b) => {
+          const aT = isNaN(a.dateObj) ? Infinity : a.dateObj.getTime();
+          const bT = isNaN(b.dateObj) ? Infinity : b.dateObj.getTime();
+          return bT - aT;
+        });
+      }
+
+      async function fetchUpcomingDoc() {
+        if (cachedDoc) return cachedDoc;
+        try {
+          const res = await fetch(link.getAttribute('href'), { cache: 'no-store' });
+          if (!res.ok) throw new Error('Failed to fetch upcoming page');
+          const text = await res.text();
+          const parser = new DOMParser();
+          cachedDoc = parser.parseFromString(text, 'text/html');
+          return cachedDoc;
+        } catch (err) {
+          console.error(err);
+          throw err;
+        }
+      }
+
+      async function populatePreview() {
+        try {
+          const doc = await fetchUpcomingDoc();
+          const entries = extractEntriesFromDoc(doc);
+          if (!entries.length) {
+            preview.innerHTML = '<p style="opacity:.6">No upcoming entries yet.</p>';
+            return;
+          }
+
+          const next = pickClosestFuture(entries);
+          if (!next) {
+            // No future events: show fallback (icon + "I'll be in Oxford...")
+            preview.innerHTML = '<p><img src="images/icons8-home-96.png" alt="" class="smiley" style="width:1.6rem;vertical-align:middle;margin-right:.5rem;"> You\'ll find me in Oxford for a little bit!</p>';
+            return;
+          }
+
+          // Show the next upcoming event as compact preview (clone to avoid moving nodes)
+          const clone = next.node.cloneNode(true);
+          clone.querySelectorAll('script').forEach(s => s.remove());
+          preview.innerHTML = '';
+          clone.classList.add('upcoming-preview-entry');
+          preview.appendChild(clone);
+
+        } catch (err) {
+          // network or parse error: fallback to the house icon + text
+          preview.innerHTML = '<p><img src="images/icons8-home-96.png" alt="" class="smiley" style="width:1.6rem;vertical-align:middle;margin-right:.5rem;"> You\'ll find me in Oxford for a little bit!</p>';
+        }
+      }
+
+      async function showUpcomingModal(e) {
+        e && e.preventDefault && e.preventDefault();
+        modalContent.innerHTML = '<p style="opacity:.6">Loading…</p>';
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+
+        try {
+          const doc = await fetchUpcomingDoc();
+          const entries = extractEntriesFromDoc(doc);
+          if (!entries.length) {
+            modalContent.innerHTML = '<p style="opacity:.6">No upcoming entries yet.</p>';
+            return;
+          }
+
+          const sorted = sortEntriesChrono(entries);
+          // Build HTML fragment: use the original node markup but sorted
+          const frag = document.createElement('div');
+          sorted.forEach(e => {
+            const clone = e.node.cloneNode(true);
+            clone.querySelectorAll('script').forEach(s => s.remove());
+            frag.appendChild(clone);
+          });
+
+          modalContent.innerHTML = frag.innerHTML;
+
+          // open external links in new tabs
+          modalContent.querySelectorAll('a').forEach(a => {
+            const href = a.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('javascript:')) {
+              a.setAttribute('target', '_blank');
+              a.setAttribute('rel', 'noopener noreferrer');
+            }
+          });
+
+        } catch (err) {
+          console.error(err);
+          modalContent.innerHTML = '<p style="color:var(--red)">Could not load upcoming content.</p>';
+        }
+      }
+
+      function closeModal() {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        link.focus();
+      }
+
+      // init
+      populatePreview();
+      link.addEventListener('click', showUpcomingModal);
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (ev) => { if (ev.target === modal) closeModal(); });
+      document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape' && modal.style.display === 'flex') closeModal(); });
+
+    })();
+  </script>
+  <!-- Color Schemes Popup -->
+  <div id="colorSchemesModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button id="closeModalX" class="modal-close-x" aria-label="Close">✕</button>
+
+      <div class="title-page">
+        <h1>My color schemes philosophy</h1>
+      </div>
+      <p>
+      <ul class="extra-list">
+        <li>Spend more time customizing the software than actually using it</li>
+        <li>Spend hours creating a new color palette from scratch, only to realize professionals do it better</li>
+        <li>Dark mode is non-negotiable (see contradiction below)</li>
+        <li>Every single part of your laptop must look the same (see contradiction below)</li>
+        <li>Your palette should look geeky, retro, dark, and vaguely original (spoiler: it won’t)</li>
+        <li>Choose <a href="https://github.com/morhetz/gruvbox" target="_blank">Gruvbox</a> for everything</li>
+        <li> Contradiction 1: Use light colors for your website (of course, <a
+            href="https://ethanschoonover.com/solarized/" target="_blank">Solarized</a> is the right choice) </li>
+        <li> Contradiction 2: For notes, use Obsidian with the <a href="https://github.com/sr-campelo/retronotes"
+            target="_blank">RetroNotes</a> template </li>
+        <li>Eventually, try actually using the softwares</li>
+    </div>
+    </p>
+  </div>
+  </div>
+
+  <!-- Teaching modal (shared style with other modals) -->
+  <div id="teachingModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="teachingModalTitle">
+      <button id="teachingModalClose" class="modal-close-x" aria-label="Close teaching panel">✕</button>
+      <div id="teachingModalContent" class="modal-content">
+        <!-- remote content will be injected here -->
+        <p style="opacity:.6">Loading…</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Publications modal -->
+  <div id="publicationsModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box modal-box-wide" role="dialog" aria-modal="true" aria-labelledby="publicationsModalTitle">
+      <button id="publicationsModalClose" class="modal-close-x" aria-label="Close publications panel">✕</button>
+      <div id="publicationsModalContent" class="modal-content">
+        <p style="opacity:.6">Loading…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- For color palette pop-up -->
+  <script>
+    (function () {
+      const trigger = document.getElementById('colorSchemesTrigger');
+      const modal = document.getElementById('colorSchemesModal');
+      const closeX = document.getElementById('closeModalX');
+
+      if (!trigger || !modal || !closeX) return;
+
+      function openModal() {
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
+        // focus the close button for keyboard users
+        closeX.focus();
+        document.body.style.overflow = 'hidden'; // prevent background scroll
+      }
+      function closeModal() {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = ''; // restore scroll
+        trigger.focus();
+      }
+
+      trigger.addEventListener('click', openModal);
+      closeX.addEventListener('click', closeModal);
+
+      // close when clicking outside the modal box
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      // ESC closes modal
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+      });
+    })();
+  </script>
+
+  <!-- Publications automatic add -->
+  <script>
+    (function () {
+      const link = document.getElementById('publicationsLink');
+      const latestBox = document.getElementById('latestPublications');
+
+      const modal = document.getElementById('publicationsModal');
+      const modalContent = document.getElementById('publicationsModalContent');
+      const closeBtn = document.getElementById('publicationsModalClose');
+
+      let cachedDoc = null;
+
+      if (!link || !latestBox || !modal || !modalContent || !closeBtn) return;
+
+      async function fetchPublicationsDoc() {
+        if (cachedDoc) return cachedDoc;
+
+        const res = await fetch(link.getAttribute('href'), { cache: 'no-store' });
+        if (!res.ok) throw new Error('Failed to fetch publications page');
+
+        const text = await res.text();
+        const parser = new DOMParser();
+        cachedDoc = parser.parseFromString(text, 'text/html');
+        return cachedDoc;
+      }
+
+      function extractBibEntries(doc) {
+        // Grab .bib-entry from the publications page
+        return Array.from(doc.querySelectorAll('.bib-entry'));
+      }
+
+      async function populateLatestTwo() {
+        try {
+          const doc = await fetchPublicationsDoc();
+          const entries = extractBibEntries(doc);
+
+          // Take first two (so keep publications.html newest-first)
+          const topTwo = entries.slice(0, 2).map(e => e.outerHTML).join('');
+          latestBox.innerHTML = topTwo || '<p style="opacity:.6">No publications yet.</p>';
+        } catch (err) {
+          console.error(err);
+          latestBox.innerHTML = '<p style="color:var(--red)">Could not load publications.</p>';
+        }
+      }
+
+      async function openModal() {
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+
+      async function showPublicationsModal(e) {
+        e.preventDefault();
+        modalContent.innerHTML = '<p style="opacity:.6">Loading…</p>';
+        await openModal();
+
+        try {
+          const doc = await fetchPublicationsDoc();
+          const container =
+            doc.querySelector('#publicationsContent') ||
+            doc.querySelector('main');
+          doc.body;
+
+          const clone = container.cloneNode(true);
+          clone.querySelectorAll('script').forEach(s => s.remove());
+
+          modalContent.innerHTML = clone.innerHTML;
+
+          // Make links open in new tab
+          modalContent.querySelectorAll('a').forEach(a => {
+            const href = a.getAttribute('href');
+            if (href && !href.startsWith('#') && !href.startsWith('javascript:')) {
+              a.setAttribute('target', '_blank');
+              a.setAttribute('rel', 'noopener noreferrer');
+            }
+          });
+        } catch (err) {
+          console.error(err);
+          modalContent.innerHTML =
+            `<p style="color:var(--red)">Could not load publications content.</p><p>${err.message}</p>`;
+        }
+      }
+
+      function closeModal() {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        link.focus();
+      }
+
+      // 1) Fill homepage with latest two on load
+      populateLatestTwo();
+
+      // 2) Open popup on click
+      link.addEventListener('click', showPublicationsModal);
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+      });
+    })();
+  </script>
+  <!-- For teaching pop-up -->
+  <script>
+    (function () {
+      const link = document.getElementById('teachingLink');
+      const modal = document.getElementById('teachingModal');
+      const modalContent = document.getElementById('teachingModalContent');
+      const closeBtn = document.getElementById('teachingModalClose');
+      let cachedHTML = null;
+
+      if (!link || !modal || !modalContent || !closeBtn) return;
+
+      async function loadTeaching() {
+        if (cachedHTML) return cachedHTML;
+        try {
+          const res = await fetch(link.getAttribute('href'), { cache: 'no-store' });
+          if (!res.ok) throw new Error('Failed to fetch teaching page');
+          const text = await res.text();
+
+          // parse and extract only the main teaching container
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(text, 'text/html');
+          const container = doc.querySelector('.teaching-megacontainer') || doc.querySelector('main') || doc.body;
+
+          // sanitize minimally: remove header/footer inside the fragment if present
+          const clone = container.cloneNode(true);
+
+          // remove any <script> tags in the fetched fragment (we don't want them executed)
+          clone.querySelectorAll('script').forEach(s => s.remove());
+
+          cachedHTML = clone.innerHTML;
+          return cachedHTML;
+        } catch (err) {
+          console.error(err);
+          return `<p style="color:var(--red)">Could not load teaching content.</p><p>${err.message}</p>`;
+        }
+      }
+
+      async function openModal() {
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+
+      async function showTeachingModal(e) {
+        e.preventDefault();
+        // show a loading placeholder
+        modalContent.innerHTML = '<p style="opacity:.6">Loading…</p>';
+        await openModal();
+        const html = await loadTeaching();
+        modalContent.innerHTML = html;
+
+        // optional: re-scope links that would navigate away — open them in new tab
+        modalContent.querySelectorAll('a').forEach(a => {
+          const href = a.getAttribute('href');
+          if (href && !href.startsWith('#') && !href.startsWith('javascript:')) {
+            a.setAttribute('target', '_blank');
+            a.setAttribute('rel', 'noopener noreferrer');
+          }
+        });
+      }
+
+      function closeModal() {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        link.focus();
+      }
+
+      // event listeners
+      link.addEventListener('click', showTeachingModal);
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+      });
+    })();
+  </script>
 
 </body>
+
 </html>
-
-
