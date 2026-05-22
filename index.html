@@ -215,6 +215,13 @@
       .then(response => response.text())
       .then(data => {
         document.getElementById('footer').innerHTML = data;
+        const d = new Date(document.lastModified);
+        const day = d.getDate();
+        const suffixes = ['th', 'st', 'nd', 'rd'];
+        const suffix = suffixes[(day % 10 <= 3 && Math.floor(day / 10) !== 1) ? day % 10 : 0];
+        const month = d.toLocaleDateString('en-GB', { month: 'short' });
+        const year = d.getFullYear();
+        document.getElementById('footer-last-modified').innerHTML = `${day}<sup>${suffix}</sup> ${month} ${year}`;
       })
       .catch(error => {
         document.getElementById('footer').innerHTML = "<p>Failed to load footer</p>";
