@@ -85,18 +85,18 @@
         <h3><a href="talks.html">Talks</a></h3>
 
         <div class="talk-entry">
+          <span class="talk-title"><a href="https://indico.math.vt.edu/event/2/contributions/249/"
+              target="_blank">A-posteriori error estimates for randomized low-rank approximations</a></span><br>
+          <span class="talk-event">ILAS 2026</span><br>
+          <span class="talk-details">22 May 2026, Virginia Tech</span>
+
+        </div>
+        <div class="talk-entry">
           <span class="talk-title">Error estimation for randomized low-rank approximations</span><br>
           <span class="talk-event">PhD Showcase</span><br>
           <span class="talk-details">11 May 2026, RAL Campus</span>
         </div>
 
-        <div class="talk-entry">
-          <span class="talk-title"><a href="talks/2026/seminar-groningen/flyer.png" target="_blank">Error estimation for
-              randomized low-rank approximations</a></span><br>
-          <span class="talk-event">COMPMATH Seminar</span><br>
-          <span class="talk-details">16 April 2026, University of Groningen</span>
-
-        </div>
       </div>
 
       <div class="teaching">
@@ -344,7 +344,7 @@
           const next = pickClosestFuture(entries);
           if (!next) {
             // No future events: show fallback (icon + "I'll be in Oxford...")
-            preview.innerHTML = '<p><img src="images/icons8-home-96.png" alt="" class="smiley" style="width:1.6rem;vertical-align:middle;margin-right:.5rem;"> You\'ll find me in Oxford for a little bit!</p>';
+            preview.innerHTML = '<p><img src="images/icons8-home-128.png" alt="" class="smiley" style="width:1.7rem;vertical-align:middle;margin-right:.4rem;">You\'ll find me in Oxford for a little bit!</p>';
             return;
           }
 
@@ -357,7 +357,7 @@
 
         } catch (err) {
           // network or parse error: fallback to the house icon + text
-          preview.innerHTML = '<p><img src="images/icons8-home-96.png" alt="" class="smiley" style="width:1.6rem;vertical-align:middle;margin-right:.5rem;"> You\'ll find me in Oxford for a little bit!</p>';
+          preview.innerHTML = '<p><img src="images/icons8-home-128.png" alt="" class="smiley" style="width:1.7rem;vertical-align:middle;margin-right:.4rem;"> You\'ll find me in Oxford for a little bit!</p>';
         }
       }
 
