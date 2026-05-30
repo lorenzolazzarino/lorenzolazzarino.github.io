@@ -199,6 +199,7 @@
           <li> I spend too many hours choosing a <span id="colorSchemesTrigger" class="popup-trigger">color
               scheme</span> for any software I use </li>
           <li>I coach the <a href="bball.html">Woman's first basketball team</a> of Oxford University
+          <li>I really like the <span id="bullsTrigger" class="popup-trigger">Minotaur, cows and bulls</span></li>
         </ul>
       </div>
 
@@ -452,6 +453,35 @@
   </div>
   </div>
 
+  <!-- Bulls Modal -->
+  <div id="bullsModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="bullsModalTitle">
+      <button id="closeBullsModalX" class="modal-close-x" aria-label="Close">✕</button>
+      <div class="title-page">
+        <h1 id="bullsModalTitle">Some bulls</h1>
+      </div>
+
+      <!-- ↓ TEXT GOES HERE ↓ -->
+      <p>It all started in Crete, where a Minotaur statue stopped me in my tracks. A misunderstood creature with which I
+        highly relate.</p>
+      <p>What it did do is make me appreciate bulls, animals that everyone associates with aggression, but that I think
+        are actually elegant, gentle, and honestly a bit queer. The collection below speaks for itself.</p>
+
+      <div style="display:flex; flex-direction:column; gap:1.2rem; align-items:center; margin-top:1rem;">
+        <figure style="margin:0; text-align:center;">
+          <img src="images/bulls/me.jpeg" alt="Me in front of a bull statue"
+            style="max-width:100%; max-height:320px; border-radius:6px; object-fit:cover;">
+          <figcaption style="margin-top:.4rem; opacity:.6; font-size:.9em;">Me &amp; a bull statue</figcaption>
+        </figure>
+        <figure style="margin:0; text-align:center;">
+          <img src="images/bulls/collection.jpg" alt="My collection of bull statues"
+            style="max-width:100%; max-height:320px; border-radius:6px; object-fit:cover;">
+          <figcaption style="margin-top:.4rem; opacity:.6; font-size:.9em;">My bull statue collection</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
   <!-- Teaching modal (shared style with other modals) -->
   <div id="teachingModal" class="modal-overlay" aria-hidden="true">
     <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="teachingModalTitle">
@@ -690,6 +720,37 @@
       modal.addEventListener('click', (e) => {
         if (e.target === modal) closeModal();
       });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+      });
+    })();
+  </script>
+
+  <!-- Bulls popup -->
+  <script>
+    (function () {
+      const trigger = document.getElementById('bullsTrigger');
+      const modal = document.getElementById('bullsModal');
+      const closeX = document.getElementById('closeBullsModalX');
+
+      if (!trigger || !modal || !closeX) return;
+
+      function openModal() {
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
+        closeX.focus();
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        trigger.focus();
+      }
+
+      trigger.addEventListener('click', openModal);
+      closeX.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
       });
