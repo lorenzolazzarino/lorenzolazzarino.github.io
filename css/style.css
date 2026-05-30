@@ -1077,5 +1077,16 @@ embed:focus {
     margin-right: 0.5rem;
   }
 
+/* Scrollable modal for image-heavy popups on mobile */
+@media (max-width: 768px) {
+  .modal-box {
+    max-height: 85vh;
+    overflow-y: auto;
+    width: 90%;
+  }
 
+  .modal-box figure img {
+    max-height: 200px;
+  }
+}
 }

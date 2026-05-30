@@ -100,7 +100,7 @@
                 <!-- Flexbox container for image and PDF next to each other -->
                 <div class="media-container">
                     <object class="pdf-viewer"
-                        data="/talks/2026/stem-for-britain/lazzarino-stembritain-poster.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                        data="talks/2026/seminar-groningen/ox-maths-presentation-template.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
                         type="application/pdf">
                         <p><a href="talks/2026/seminar-groningen/ox-maths-presentation-template.pdf">Slides</a></p>
                     </object>
@@ -357,6 +357,99 @@
                 document.getElementById('footer').innerHTML = "<p>Failed to load footer</p>";
                 console.error("Error loading footer:", error);
             });
+    </script>
+
+    <!-- Lightbox modal for images and PDFs -->
+    <div id="lightboxOverlay" style="
+      display:none; position:fixed; inset:0; z-index:2000;
+      background:rgba(0,0,0,0.72); align-items:center; justify-content:center;">
+        <div id="lightboxBox" style="
+        position:relative; background:var(--base3); border:0.12rem solid var(--base0);
+        padding:1.4rem 1.2rem 1rem; max-width:92vw; max-height:92vh;
+        display:flex; flex-direction:column; align-items:center; gap:0.8rem;">
+            <!-- close -->
+            <button id="lightboxClose" aria-label="Close" style="
+          position:absolute; top:0.35rem; right:0.4rem; background:transparent;
+          border:none; font-size:1.1rem; cursor:pointer; color:var(--red); line-height:1;">✕</button>
+            <!-- content injected here -->
+            <div id="lightboxContent" style="display:flex; align-items:center; justify-content:center;
+          max-width:100%; max-height:80vh; overflow:auto;"></div>
+            <!-- download button (shown only for PDFs) -->
+            <a id="lightboxDownload" href="#" download style="
+          display:none; font-family:'Inconsolata',monospace; font-size:0.9rem;
+          color:var(--base02); text-decoration:underline;
+          text-decoration-color:var(--red); text-underline-offset:0.15em; font-weight:600;">
+                ↓ Download
+            </a>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const overlay = document.getElementById('lightboxOverlay');
+            const box = document.getElementById('lightboxBox');
+            const content = document.getElementById('lightboxContent');
+            const closeBtn = document.getElementById('lightboxClose');
+            const dlBtn = document.getElementById('lightboxDownload');
+
+            function openLightbox() {
+                overlay.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+            function closeLightbox() {
+                overlay.style.display = 'none';
+                document.body.style.overflow = '';
+                content.innerHTML = '';
+                dlBtn.style.display = 'none';
+                dlBtn.href = '#';
+            }
+
+            closeBtn.addEventListener('click', closeLightbox);
+            overlay.addEventListener('click', (e) => { if (e.target === overlay) closeLightbox(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+            // --- Images ---
+            document.querySelectorAll('.media-container img').forEach(img => {
+                img.style.cursor = 'zoom-in';
+                img.addEventListener('click', () => {
+                    content.innerHTML = `<img src="${img.src}" alt="${img.alt}"
+            style="max-width:85vw; max-height:78vh; object-fit:contain; display:block;">`;
+                    dlBtn.style.display = 'none';
+                    openLightbox();
+                });
+            });
+
+            // --- PDFs ---
+            document.querySelectorAll('.media-container object.pdf-viewer').forEach(obj => {
+                // Extract clean PDF path (strip hash params)
+                const rawData = obj.getAttribute('data') || '';
+                const pdfPath = rawData.split('#')[0];
+
+                // Make it look clickable
+                obj.style.cursor = 'pointer';
+                obj.style.pointerEvents = 'none'; // let the wrapper catch clicks
+                const wrapper = document.createElement('div');
+                wrapper.style.cssText = 'position:relative; cursor:pointer;';
+                obj.parentNode.insertBefore(wrapper, obj);
+                wrapper.appendChild(obj);
+
+                // Overlay to catch clicks on the object element
+                const clickCatcher = document.createElement('div');
+                clickCatcher.style.cssText = 'position:absolute; inset:0; cursor:pointer; z-index:1;';
+                wrapper.appendChild(clickCatcher);
+
+                clickCatcher.addEventListener('click', () => {
+                    content.innerHTML = `<iframe src="${pdfPath}"
+            style="width:min(780px,85vw); height:75vh; border:none;" title="PDF viewer"></iframe>`;
+                    dlBtn.style.display = 'inline';
+                    dlBtn.href = pdfPath;
+                    // derive a filename from the path
+                    dlBtn.download = pdfPath.split('/').pop() || 'slides.pdf';
+                    openLightbox();
+                });
+            });
+
+        })();
     </script>
 
 </body>
