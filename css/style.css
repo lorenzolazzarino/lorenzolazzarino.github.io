@@ -634,7 +634,21 @@ embed:focus {
   text-underline-offset: 0.15em;
   font-weight: 600;
 }
+/* Bulls modal (and any image-heavy modal): scrollable on mobile */
+.modal-box {
+  max-height: 90vh;
+  overflow-y: auto;
+}
 
+/* Fix title-page h1 directly inside modal-box (not wrapped in .modal-content) */
+.modal-box > .title-page h1 {
+  font-size: 1.5rem;
+  color: var(--base03);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 0.8rem 0;
+  line-height: 1.05;
+}
 /* Modal overlay */
 .modal-overlay {
   position: fixed;
