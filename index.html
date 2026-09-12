@@ -109,19 +109,14 @@
               target="_blank">Numerical Linear Algebra</a></span><br>
           <span class="teaching-lecturer">Lecturer: Y.Nakatsukasa</span><br><br>
 
-          <!-- 
-                            <span class="teaching-role">Tutor -</span>
-                            <span class="teaching-class"><a href="https://courses.maths.ox.ac.uk/course/view.php?id=5058" target="_blank">Continuous Optimization</a></span>
-                            <span class="teaching-lecturer">Lecturer: C.Cartis</span>
-                        -->
-        </div>
-        <div class="teaching-entry">
-          <span class="teaching-role">Mentor</span> <br>
-          <span class="teaching-class"><a
-              href="https://www.maths.ox.ac.uk/members/students/postgraduate-courses/doctor-philosophy/skills-training/broadening-training/suggest-topic-directed-reading-programme-undergraduates"
-              target="_blank">Directed Reading Programme</a></span><br>
-          <span class="teaching-lecturer">Based on: (Pearce, Martinsson, 2025)</span>
 
+        </div>
+        <h3><a href="#organizingModal" id="organizingLink" class="popup-link">Activities</a></h3>
+        <div class="teaching-entry">
+          <span class="teaching-role">Co-organizer</span><br>
+          <span class="teaching-class"><a href="https://www.maths.ox.ac.uk/events/list/670" target="_blank"
+              rel="noopener noreferrer">NA Group Internal Seminar 2026/27</a></span><br>
+          <span class="teaching-lecturer">With Kars Knook</span>
         </div>
       </div>
       <div class="horizontal-line"></div>
@@ -496,6 +491,25 @@
   </div>
 
 
+  <!-- Academic Activities modal -->
+  <div id="organizingModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="organizingModalTitle">
+      <button id="organizingModalClose" class="modal-close-x" aria-label="Close academic activities panel">✕</button>
+      <div id="organizingModalContent" class="modal-content">
+        <div class="title-page">
+          <h1 id="organizingModalTitle">Activities</h1>
+        </div>
+        <div class="teaching-entry">
+          <span class="teaching-role">Co-organizer</span><br>
+          <span class="teaching-class"><a href="https://www.maths.ox.ac.uk/events/list/670" target="_blank"
+              rel="noopener noreferrer">NA Group Internal Seminar 2026/27</a></span><br>
+          <span class="teaching-lecturer">With Kars Knook</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <!-- Publications modal -->
   <div id="publicationsModal" class="modal-overlay" aria-hidden="true">
     <div class="modal-box modal-box-wide" role="dialog" aria-modal="true" aria-labelledby="publicationsModalTitle">
@@ -722,6 +736,34 @@
       modal.addEventListener('click', (e) => {
         if (e.target === modal) closeModal();
       });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+      });
+    })();
+  </script>
+
+  <!-- For academic activities pop-up -->
+  <script>
+    (function () {
+      const link = document.getElementById('organizingLink');
+      const modal = document.getElementById('organizingModal');
+      const closeBtn = document.getElementById('organizingModalClose');
+      if (!link || !modal || !closeBtn) return;
+      function closeModal() {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        link.focus();
+      }
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.style.display = 'flex';
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      });
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
       });
