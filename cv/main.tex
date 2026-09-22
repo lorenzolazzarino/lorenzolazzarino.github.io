@@ -1,0 +1,197 @@
+% Lorenzo Lazzarino -- Academic CV
+% Header and visual language adapted from lorenzolazzarino.github.io.
+
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{inconsolata}
+\usepackage[a4paper,top=1.35cm,bottom=1.35cm,left=1.6cm,right=1.6cm]{geometry}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{etoolbox}
+
+% Solarized Light, matching the website.
+\definecolor{base03}{HTML}{002B36}
+\definecolor{base02}{HTML}{073642}
+\definecolor{base01}{HTML}{586E75}
+\definecolor{base00}{HTML}{657B83}
+\definecolor{base0}{HTML}{839496}
+\definecolor{base3}{HTML}{FDF6E3}
+\definecolor{red}{HTML}{DC322F}
+\definecolor{cyan}{HTML}{2AA198}
+\definecolor{blue}{HTML}{268BD2}
+
+\pagecolor{base3}
+\color{base01}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=red,
+  linkcolor=base02,
+  pdftitle={Lorenzo Lazzarino -- Academic CV},
+  pdfauthor={Lorenzo Lazzarino}
+}
+
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=1.25em,itemsep=0.12em,topsep=0.18em}
+\renewcommand{\arraystretch}{1.12}
+
+% Section headings are intentionally quiet, as on the website.
+\titleformat{\section}
+  {\large\bfseries\color{base03}}
+  {}{0pt}{}
+\titlespacing*{\section}{0pt}{0.9em}{0.43em}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}m{\hsize}}
+\newcommand{\redpipe}{\textcolor{red}{\rule[-0.2ex]{0.8pt}{1.15ex}}}
+\newcommand{\cvdate}[1]{\textcolor{base0}{\footnotesize #1}}
+\newcommand{\cvplace}[1]{\textcolor{base01}{\textbf{#1}}}
+\newcommand{\cvtitle}[1]{\textcolor{base03}{\textbf{#1}}}
+\newcommand{\cvlink}[2]{\href{#1}{#2}}
+\newcommand{\plainlink}[2]{\href{#1}{\textcolor{base01}{#2}}}
+\newcommand{\imglink}[2]{\href{#1}{\includegraphics[height=0.62cm,keepaspectratio]{#2}}}
+
+\newcommand{\pubentry}[4]{
+  \begin{tabularx}{\linewidth}{@{}>{\raggedleft\arraybackslash}p{2.55cm}@{\hspace{0.55cm}}X@{}}
+    \cvdate{[#1]} & \cvtitle{#2}\\[-0.05em]
+    & #3. #4
+  \end{tabularx}\par\vspace{0.34em}
+}
+
+\newcommand{\cventry}[4]{%
+  \begin{tabularx}{\linewidth}{@{}>{\raggedleft\arraybackslash}p{2.55cm}@{\hspace{0.55cm}}X@{}}
+    \cvdate{#1} & \cvtitle{#2}\ifstrempty{#3}{}{\hfill\hspace{0.6em}\cvplace{#3}}\\[-0.05em]
+    & #4
+  \end{tabularx}\par\vspace{0.34em}%
+}
+
+\newcommand{\talkentry}[4]{%
+  \begin{tabularx}{\linewidth}{@{}>{\raggedleft\arraybackslash}p{2.55cm}@{\hspace{0.55cm}}X@{}}
+    \cvdate{#1} & \cvtitle{#2}\\[-0.05em]
+    & \textcolor{base01}{\textit{#3}}\enspace\redpipe\enspace\textcolor{base00}{#4}
+  \end{tabularx}\par\vspace{0.29em}%
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[R]{\footnotesize\textcolor{base01}{Lorenzo Lazzarino\enspace\redpipe\enspace\thepage}}
+
+\begin{document}
+
+% Website-style header: profile image | identity | contact panel.
+\begin{tabularx}{\linewidth}{@{}m{2.2cm}X@{}}
+  \centering
+  \begin{tikzpicture}
+    \clip[rounded corners=15.5pt] (0,0) rectangle (2.05cm,2.05cm);
+    \node[inner sep=0pt,anchor=south west] at (0,0)
+    {\includegraphics[width=2.05cm,height=2.05cm,keepaspectratio]{user-3.jpg}};
+  \end{tikzpicture}
+   &
+  \parbox[c][1.05cm][c]{\linewidth}{\centering
+    {\fontsize{21}{24}\selectfont\bfseries\color{base03} LORENZO LAZZARINO}\par
+    \vspace{0.33em}
+    \textcolor{base00}{\emph{He/Him}}\enspace\redpipe\enspace
+    \plainlink{mailto:lorenzo.lazzarino@maths.ox.ac.uk}{lazzarino@maths.ox.ac.uk}
+    \enspace\redpipe\enspace
+    \plainlink{https://lorenzolazzarino.eu}{lorenzolazzarino.eu}\par
+    \vspace{0.36em}
+    \small
+    \textcolor{base03}{PHD STUDENT}\par
+    \textcolor{base01}{University of Oxford -- STFC}
+  }
+\end{tabularx}
+
+\vspace{0.35em}
+\begin{center}
+  \imglink{https://scholar.google.com/citations?user=gPxBjy8AAAAJ\&hl=fr\&oi=ao}{icons8-google-scholar-96.png}
+  \hspace{0.5cm}
+  \imglink{https://arxiv.org/search/math?searchtype=author\&query=Lazzarino,+L}{arxiv-base2.png}
+  \hspace{0.5cm}
+  \imglink{https://github.com/lorenzolazzarino}{icons8-github-96.png}
+  \hspace{0.5cm}
+  \imglink{https://www.linkedin.com/in/lorenzolazzarino/}{icons8-linkedin-96.png}
+\end{center}
+
+% About-me text in the site's bordered-container spirit, without a title.
+\setlength{\fboxsep}{1.5em}
+\fcolorbox{base0}{base3}{%
+  \begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}
+    I am a PhD student in Numerical Mathematics at the University of Oxford, advised by Yuji Nakatsukasa and Hussam Al Daas (STFC--CMG). My research concerns (randomized) numerical multilinear algebra, with particular interests in randomized low-rank approximations, a-posteriori error estimates, matrix perturbation theory, and the design of synchrotron experiments.
+  \end{minipage}}
+
+\section{Education}
+
+\cventry{2023--2027}{DPhil in Mathematics}{University of Oxford, Oxford, UK}{Advisors: Yuji Nakatsukasa (Oxford) and Hussam Al Daas (STFC--CMG).}
+
+\cventry{2021--2023}{MSc in Computational Mathematics}{Charles University, Prague, Czechia}{Graduated with honours. Thesis: \emph{Numerical approximation of the time-ordered exponential for spin dynamic simulation}; supervisor: Stefano Pozza.}
+
+\cventry{2021--2023}{4EU+ Programme}{Sorbonne University, Paris, France}{Collaboration with Prof. Christian Bonhomme.}
+
+\cventry{2017--2021}{BSc in Mathematics}{Università Milano--Bicocca, Milan, Italy}{}
+
+\cventry{2017--2021}{Erasmus+ Programme}{TU Kaiserslautern, Kaiserslautern, Germany}{}
+
+\section{Publications}
+
+\pubentry{1}{Reducing acquisition time and radiation damage: data-driven subsampling for spectro-microscopy}{M. Meier, L. Lazzarino,  B. Shustin, H. Al Daas, P. Quinn}{\textit{Journal of Synchrotron Radiation}, 2026. \cvlink{https://journals.iucr.org/s/issues/2026/05/00/bon5003/index.html}{[paper]}}
+
+\pubentry{2}{Efficient error estimators for Generalized Nyström}{L. Lazzarino, K. J. Pearce, N. Pritchard}{\textit{arXiv}, 2026. \cvlink{https://arxiv.org/abs/2601.11493}{[preprint]}}
+
+\pubentry{3}{Preconditioned normal equations for solving discretised partial differential equations}{L. Lazzarino, Y. Nakatsukasa, U. Zerbinati}{\textit{arXiv}, 2025. \cvlink{https://arxiv.org/abs/2502.17626v2}{[preprint]}}
+
+\pubentry{4}{Matrix perturbation analysis of methods for extracting singular values from approximate singular subspaces}{L. Lazzarino, H. Al Daas, Y. Nakatsukasa}{\textit{SIMAX}, 2024. \cvlink{https://epubs.siam.org/doi/abs/10.1137/24M169343X}{[paper]}}
+
+
+\section{Teaching}
+
+\cventry{2024--2026}{Tutor, Numerical Linear Algebra}{University of Oxford}{Lecturer: Y. Nakatsukasa.}
+
+\cventry{2026}{Mentor, Directed Reading Programme}{University of Oxford}{Reading programme based on Pearce and Martinsson (2025).}
+
+\cventry{2023}{Marker, Numerical Linear Algebra}{University of Oxford}{Lecturer: J. Tanner.}
+
+\cventry{2024}{Marker / Teaching Assistant, Continuous Optimization}{University of Oxford}{Lecturer: C. Cartis.}
+
+\section{Awards}
+
+\cventry{2026}{Finalist, STEM for BRITAIN}{House of Commons, UK Parliament}{Recognised for work on data-driven experimental design in spectro-microscopy.}
+
+\cventry{2023--2027}{Ada Lovelace Centre Scholarship}{Mathematical Institute, University of Oxford}{}
+
+\cventry{2022}{Scholarship for Outstanding Academic Achievements}{Charles University}{}
+
+\cventry{2022--2023}{Student Faculty Grants}{Faculty of Mathematics and Physics, Charles University}{Team production of Functional Analysis lecture notes in Czech, English, and Italian using a shared mathematical script.}
+
+\section{Academic Activities}
+
+\cventry{2026--2027}{Co-organizer, Numerical Analysis Group Internal Seminar}{University of Oxford}{Co-organizer with Kars Knook.}
+
+\section{Talks}
+
+\talkentry{04 Jun 2026}{Error estimations for randomized low-rank approximations}{Numerical Analysis Group Internal Seminar}{University of Oxford}
+\talkentry{22 May 2026}{A-posteriori error estimates for randomized low-rank approximations}{ILAS 2026}{Virginia Tech}
+\talkentry{11 May 2026}{Error estimation for randomized low-rank approximations}{PhD Showcase}{RAL Campus}
+\talkentry{16 Apr 2026}{Error estimation for randomized low-rank approximations}{COMPMATH Seminar}{University of Groningen}
+\talkentry{17 Mar 2026}{Reducing acquisition time and radiation damage through data-driven experimental design in spectro-microscopy}{STEM for BRITAIN}{House of Commons, UK Parliament}
+\talkentry{01 Sep 2025}{Extracting accurate singular values from approximate subspaces}{ENUMATH}{Heidelberg}
+\talkentry{25 Jun 2025}{Extracting accurate singular values from approximate subspaces}{The 30th Biennial Numerical Analysis Conference}{University of Strathclyde}
+\talkentry{05 Jun 2025}{Reducing acquisition time and radiation damage: data-driven subsampling for spectromicroscopy}{Numerical Analysis Group Internal Seminar}{University of Oxford}
+\talkentry{20 Feb 2025}{Matrix perturbation analysis of methods for extracting singular values given approximate subspaces}{Numerical Analysis Seminar}{Charles University, Prague (online)}
+\talkentry{20--21 Jan 2025}{Extracting accurate singular values from approximate subspaces}{Due Giorni di Algebra Lineare Numerica e Applicazioni}{Università di Pisa}
+\talkentry{10 Oct 2024}{Extracting accurate singular values from approximate subspaces}{PYSANUM}{Università di Pisa and Scuola Normale Superiore}
+\talkentry{29 Jul 2024}{Matrix perturbation analysis of methods for extracting singular values}{Gene Golub SIAM Summer School, 3-minute presentations}{Quito}
+\talkentry{05 Mar 2024}{Error bound on singular values approximations by generalized Nyström}{Numerical Analysis Group Internal Seminar}{University of Oxford}
+\talkentry{20--21 Jul 2023}{Numerical approximation of the time-ordered exponential for spin dynamic simulation}{Workshop on Numerical Mathematics}{Charles University, Prague}
+
+\end{document}
+
