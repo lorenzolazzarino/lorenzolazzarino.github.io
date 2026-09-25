@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1789232873.42121 "/home/lorenzolazzarino/Filen/2-portfolio/personal-website/github/lorenzolazzarino.github.io/cv/main.tex" "main.pdf" "main" 1789232874.01995 0
+["pdflatex"] 1790340555.21685 "/home/lorenzolazzarino/Filen/2-portfolio/personal-website/github/lorenzolazzarino.github.io/cv/main.tex" "main.pdf" "main" 1790340556.30842 0
   "/etc/texmf/web2c/texmf.cnf" 1726226999.40417 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/lorenzolazzarino/Filen/2-portfolio/personal-website/github/lorenzolazzarino.github.io/cv/main.tex" 1789232872.7454 9877 6bb3632a40a508ff25a21857d17a16f3 ""
+  "/home/lorenzolazzarino/Filen/2-portfolio/personal-website/github/lorenzolazzarino.github.io/cv/main.tex" 1790340554.97649 9977 a61e0a96908a17cf610348fe36d53444 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm" 1136768653 3584 2d666ecf6d466d8b007246bc2f94d9da ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1136768653 3584 402da0b29eafbad07963b1224b222f18 ""
@@ -155,10 +155,9 @@
   "icons8-github-96.png" 1789229627.64401 2076 df6d6146e686fafc1fc6c82c1a22c293 ""
   "icons8-google-scholar-96.png" 1789229627.64389 1808 31b0d0b605071d60181a95060be68144 ""
   "icons8-linkedin-96.png" 1789229627.64405 1109 0333a0b3c21ffd62c5a91a25ce10174a ""
-  "main.aux" 1789232873.95357 803 d36a9382d451ffa86cb1c973df910ad8 "pdflatex"
-  "main.out" 1789232873.95357 556 8385c5e7574cd4a64ddc765fcd8df178 "pdflatex"
-  "main.tex" 1789232872.7454 9877 6bb3632a40a508ff25a21857d17a16f3 ""
-  "user-3.jpg" 1789228641.89586 571751 0f707ef77dcf3449ab72f6d9726752cf ""
+  "main.aux" 1790340556.21376 918 e3944e931f9793d132966c53dc5c382a "pdflatex"
+  "main.out" 1790340556.21476 692 03f8458a6f04c8c1d75652c41a33bddd "pdflatex"
+  "main.tex" 1790340554.97649 9977 a61e0a96908a17cf610348fe36d53444 ""
   (generated)
   "main.aux"
   "main.log"

@@ -88,15 +88,8 @@
 
 \begin{document}
 
-% Website-style header: profile image | identity | contact panel.
-\begin{tabularx}{\linewidth}{@{}m{2.2cm}X@{}}
-  \centering
-  \begin{tikzpicture}
-    \clip[rounded corners=15.5pt] (0,0) rectangle (2.05cm,2.05cm);
-    \node[inner sep=0pt,anchor=south west] at (0,0)
-    {\includegraphics[width=2.05cm,height=2.05cm,keepaspectratio]{user-3.jpg}};
-  \end{tikzpicture}
-   &
+% Website-style header: centered identity and contact panel.
+\begin{center}
   \parbox[c][1.05cm][c]{\linewidth}{\centering
     {\fontsize{21}{24}\selectfont\bfseries\color{base03} LORENZO LAZZARINO}\par
     \vspace{0.33em}
@@ -109,9 +102,9 @@
     \textcolor{base03}{PHD STUDENT}\par
     \textcolor{base01}{University of Oxford -- STFC}
   }
-\end{tabularx}
+\end{center}
 
-\vspace{0.35em}
+\vspace{3em}
 \begin{center}
   \imglink{https://scholar.google.com/citations?user=gPxBjy8AAAAJ\&hl=fr\&oi=ao}{icons8-google-scholar-96.png}
   \hspace{0.5cm}
@@ -126,7 +119,7 @@
 \setlength{\fboxsep}{1.5em}
 \fcolorbox{base0}{base3}{%
   \begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}
-    I am a PhD student in Numerical Mathematics at the University of Oxford, advised by Yuji Nakatsukasa and Hussam Al Daas (STFC--CMG). My research concerns (randomized) numerical multilinear algebra, with particular interests in randomized low-rank approximations, a-posteriori error estimates, matrix perturbation theory, and the design of synchrotron experiments.
+    I am a PhD student in Numerical Mathematics at the University of Oxford, advised by Yuji Nakatsukasa and Hussam Al Daas (STFC--CMG). My research concerns (randomized) numerical (multi)linear algebra, with particular interests in randomized low-rank approximations, a-posteriori error estimates, matrix perturbation theory, and the design of synchrotron experiments.
   \end{minipage}}
 
 \section{Education}
@@ -143,13 +136,15 @@
 
 \section{Publications}
 
-\pubentry{1}{Reducing acquisition time and radiation damage: data-driven subsampling for spectro-microscopy}{M. Meier, L. Lazzarino,  B. Shustin, H. Al Daas, P. Quinn}{\textit{Journal of Synchrotron Radiation}, 2026. \cvlink{https://journals.iucr.org/s/issues/2026/05/00/bon5003/index.html}{[paper]}}
+\pubentry{1}{Blind error estimation for CUR approximation}{L. Lazzarino, K. J. Pearce, N. Pritchard}{\textit{arXiv}, 2026. \cvlink{https://arxiv.org/abs/2609.23810}{[preprint]} }
 
-\pubentry{2}{Efficient error estimators for Generalized Nyström}{L. Lazzarino, K. J. Pearce, N. Pritchard}{\textit{arXiv}, 2026. \cvlink{https://arxiv.org/abs/2601.11493}{[preprint]}}
+\pubentry{2}{Reducing acquisition time and radiation damage: data-driven subsampling for spectro-microscopy}{M. Meier, L. Lazzarino,  B. Shustin, H. Al Daas, P. Quinn}{\textit{Journal of Synchrotron Radiation}, 2026. \cvlink{https://journals.iucr.org/s/issues/2026/05/00/bon5003/index.html}{[paper]}}
 
-\pubentry{3}{Preconditioned normal equations for solving discretised partial differential equations}{L. Lazzarino, Y. Nakatsukasa, U. Zerbinati}{\textit{arXiv}, 2025. \cvlink{https://arxiv.org/abs/2502.17626v2}{[preprint]}}
+\pubentry{3}{Efficient error estimators for Generalized Nyström}{L. Lazzarino, K. J. Pearce, N. Pritchard}{\textit{arXiv}, 2026. \cvlink{https://arxiv.org/abs/2601.11493}{[preprint]}}
 
-\pubentry{4}{Matrix perturbation analysis of methods for extracting singular values from approximate singular subspaces}{L. Lazzarino, H. Al Daas, Y. Nakatsukasa}{\textit{SIMAX}, 2024. \cvlink{https://epubs.siam.org/doi/abs/10.1137/24M169343X}{[paper]}}
+\pubentry{4}{Preconditioned normal equations for solving discretised partial differential equations}{L. Lazzarino, Y. Nakatsukasa, U. Zerbinati}{\textit{arXiv}, 2025. \cvlink{https://arxiv.org/abs/2502.17626v2}{[preprint]}}
+
+\pubentry{5}{Matrix perturbation analysis of methods for extracting singular values from approximate singular subspaces}{L. Lazzarino, H. Al Daas, Y. Nakatsukasa}{\textit{SIMAX}, 2024. \cvlink{https://epubs.siam.org/doi/abs/10.1137/24M169343X}{[paper]}}
 
 
 \section{Teaching}
@@ -166,7 +161,7 @@
 
 \cventry{2026}{Finalist, STEM for BRITAIN}{House of Commons, UK Parliament}{Recognised for work on data-driven experimental design in spectro-microscopy.}
 
-\cventry{2023--2027}{Ada Lovelace Centre Scholarship}{Mathematical Institute, University of Oxford}{}
+\cventry{2023--2027}{Ada Lovelace Centre Scholarship}{STFC}{}
 
 \cventry{2022}{Scholarship for Outstanding Academic Achievements}{Charles University}{}
 
@@ -193,5 +188,12 @@
 \talkentry{05 Mar 2024}{Error bound on singular values approximations by generalized Nyström}{Numerical Analysis Group Internal Seminar}{University of Oxford}
 \talkentry{20--21 Jul 2023}{Numerical approximation of the time-ordered exponential for spin dynamic simulation}{Workshop on Numerical Mathematics}{Charles University, Prague}
 
-\end{document}
+\section{Referee Experience}
 
+\cventry{2026}{SIAM Journal on Scientific Computing}{}{1 peer review.}
+
+\cventry{2025}{Journal of Mathematical Analysis and Applications}{}{2 peer reviews.}
+
+\cventry{2024}{Linear Algebra and its Applications}{}{1 peer review.}
+
+\end{document}
